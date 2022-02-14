@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("inl",["Function"],[["inLegacyMode",,[["SyncSamplingNetwork",,,,0,"File:MicroStrain/Wireless/SyncSamplingNetwork.h:SyncSamplingNetwork.inLegacyMode","CClass:SyncSamplingNetwork:inLegacyMode"]]]]);

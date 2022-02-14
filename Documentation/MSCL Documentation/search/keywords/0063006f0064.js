@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("cod",["Function"],[["code",,[["Error_Connection",,,,0,"File:Exceptions.h:Error_Connection.code","CClass:Error_Connection:code"],["Error_MipCmdFailed",,,,0,"File:Exceptions.h:Error_MipCmdFailed.code","CClass:Error_MipCmdFailed:code"]]]]);

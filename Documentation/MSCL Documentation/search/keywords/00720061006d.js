@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("ram",["Function"],[["ramBufferSize",,[["NodeFeatures",,,,0,"File:MicroStrain/Wireless/Features/NodeFeatures.h:NodeFeatures.ramBufferSize","CClass:NodeFeatures:ramBufferSize"]]]]);

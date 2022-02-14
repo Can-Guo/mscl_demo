@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("cut",["Variable"],[["cutoffFrequency",,[["AdvancedLowPassFilterData",,,,0,"File:MicroStrain/Inertial/ExposedInertialTypes.h:AdvancedLowPassFilterData.cutoffFrequency","CClass:AdvancedLowPassFilterData:cutoffFrequency"]]]]);

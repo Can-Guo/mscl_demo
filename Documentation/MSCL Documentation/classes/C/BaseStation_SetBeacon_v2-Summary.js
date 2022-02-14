@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("CClass:BaseStation_SetBeacon_v2","BaseStation_SetBeacon_v2");NDSummary.OnSummaryLoaded("CClass:BaseStation_SetBeacon_v2",[["C/C++","C"]],[["Classes","Class"],["Functions","Function"],["Groups","Group"]],[[4108,0,0,"BaseStation_SetBeacon_v2"],[4109,0,2,"Functions","Functions"],[4110,0,1,"buildCommand","buildCommand"]]);

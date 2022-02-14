@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("blo",["Constant","Variable"],[["BLOCK_HEADER_ID",,[["NodeMemory_v2",,,,0,"File:MicroStrain/Wireless/NodeMemory_v2.h:NodeMemory_v2.BLOCK_HEADER_ID","CClass:NodeMemory_v2:BLOCK_HEADER_ID"]]],["blockSize",,[["FlashInfo",,,,1,"File:MicroStrain/Wireless/Features/FlashInfo.h:FlashInfo.blockSize","CClass:FlashInfo:blockSize"]]]]);

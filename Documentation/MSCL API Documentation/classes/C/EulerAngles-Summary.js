@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("CClass:EulerAngles","EulerAngles");NDSummary.OnSummaryLoaded("CClass:EulerAngles",[["C/C++","C"]],[["Classes","Class"],["Functions","Function"]],[[100,0,0,"EulerAngles"],[101,0,1,"EulerAngles","EulerAngles"],[102,0,1,"roll","roll"],[103,0,1,"pitch","pitch"],[104,0,1,"yaw","yaw"],[105,0,1,"heading","heading"]]);

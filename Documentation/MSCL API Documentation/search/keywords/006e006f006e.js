@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("non",["Enumeration","Function"],[["NONE",,[[,,,,0,"File:MicroStrain/Inertial/ExposedInertialTypes.h:NONE"]]],["NonFloat",,[["BaseStationAnalogPair",,,,1,"File:MicroStrain/Wireless/BaseStationAnalogPair.h:BaseStationAnalogPair.NonFloat","CClass:BaseStationAnalogPair:NonFloat"]]]]);

@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.o  -o ../bin/example_demo -Wl,-rpath,/usr/share/c++-mscl /usr/share/c++-mscl/libmscl.so -lpthread 

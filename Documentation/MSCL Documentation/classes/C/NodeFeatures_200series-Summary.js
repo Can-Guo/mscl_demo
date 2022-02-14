@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("CClass:NodeFeatures_200series","NodeFeatures_200series");NDSummary.OnSummaryLoaded("CClass:NodeFeatures_200series",[["C/C++","C"]],[["Classes","Class"],["Functions","Function"],["Groups","Group"]],[[5503,0,0,"NodeFeatures_200series"],[5504,0,2,"Functions","Functions"],[5505,0,1,"NodeFeatures_200series","NodeFeatures_200series"]]);

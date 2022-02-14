@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("File:Utils.cpp","Utils.cpp");NDSummary.OnSummaryLoaded("File:Utils.cpp",[["C/C++","C"]],[["Functions","Function"],["Groups","Group"]],[[8606,0,1,"Functions","Functions"],[8607,0,0,"getCurrentSystemTime","getCurrentSystemTime"]]);

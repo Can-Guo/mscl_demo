@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("sco",["Class"],[["ScopeHelper",,[[,,,,0,"File:ScopeHelper.h:ScopeHelper","CClass:ScopeHelper"]]]]);

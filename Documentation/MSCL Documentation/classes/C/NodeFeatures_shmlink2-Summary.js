@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("CClass:NodeFeatures_shmlink2","NodeFeatures_shmlink2");NDSummary.OnSummaryLoaded("CClass:NodeFeatures_shmlink2",[["C/C++","C"]],[["Classes","Class"],["Functions","Function"],["Groups","Group"]],[[5434,0,0,"NodeFeatures_shmlink2"],[5435,0,2,"Functions","Functions"],[5436,0,1,"NodeFeatures_shmlink2","NodeFeatures_shmlink2"]]);

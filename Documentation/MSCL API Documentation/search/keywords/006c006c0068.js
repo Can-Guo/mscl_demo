@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("llh",["Enumeration"],[["LLH_NED",,[["Quaternion",,,,0,"File:MicroStrain/Inertial/ExposedInertialTypes.h:Quaternion.LLH_NED","CClass:Quaternion:LLH_NED"]]]]);

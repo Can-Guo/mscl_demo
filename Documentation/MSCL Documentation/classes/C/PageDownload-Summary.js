@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("CClass:PageDownload","PageDownload");NDSummary.OnSummaryLoaded("CClass:PageDownload",[["C/C++","C"]],[["Classes","Class"],["Functions","Function"],["Groups","Group"]],[[3959,0,0,"PageDownload"],[3960,0,2,"Functions","Functions"],[3961,0,1,"buildCommand","buildCommand"]]);

@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("tom",["Function"],[["toMask",,[["BitMask",,,,0,"File:BitMask.h:BitMask.toMask","CClass:BitMask:toMask"],["ChannelMask",,,,0,"File:MicroStrain/Wireless/ChannelMask.h:ChannelMask.toMask","CClass:ChannelMask:toMask"],["DataModeMask",,,,0,"File:MicroStrain/Wireless/Configuration/DataModeMask.h:DataModeMask.toMask","CClass:DataModeMask:toMask"]]]]);

@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("gen",["Class"],[["GenericMipCmdResponse",,[[,,,,0,"File:MicroStrain/MIP/Commands/GenericMipCommand.h:GenericMipCmdResponse","CClass:GenericMipCmdResponse"]]],["GenericMipCommand",,[[,,,,0,"File:MicroStrain/MIP/Commands/GenericMipCommand.h:GenericMipCommand(2)","CClass:GenericMipCommand"]]]]);

@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("~ma",["Function"],[["~Matrix_3x3",,[["Matrix_3x3",,,,0,"File:MicroStrain/Inertial/ExposedInertialTypes.h:Matrix_3x3.~Matrix_3x3","CClass:Matrix_3x3:~Matrix_3x3"]]]]);

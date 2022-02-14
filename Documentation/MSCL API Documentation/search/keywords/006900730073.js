@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("iss",["Function"],[["isSharedChannelField",,[["MipTypes",,,,0,"File:MicroStrain/MIP/MipTypes.h:MipTypes.isSharedChannelField","CClass:MipTypes:isSharedChannelField"]]],["issues",,[["Error_InvalidConfig",,,,0,"File:Exceptions.h:Error_InvalidConfig.issues","CClass:Error_InvalidConfig:issues"]]]]);

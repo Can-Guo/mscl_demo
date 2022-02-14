@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("beh",["Type"],[["BehaviorModes",,[["GpioConfiguration",,,,0,"File:MicroStrain/Inertial/ExposedInertialTypes.h:GpioConfiguration.BehaviorModes","CClass:GpioConfiguration:BehaviorModes"]]]]);

@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("CClass:Vector","Vector");NDSummary.OnSummaryLoaded("CClass:Vector",[["C/C++","C"]],[["Classes","Class"],["Functions","Function"]],[[3239,0,0,"Vector"],[3240,0,1,"size","size"],[3241,0,1,"as_doubleAt","as_doubleAt"],[3242,0,1,"as_floatAt","as_floatAt"],[3243,0,1,"as_uint16At","as_uint16At"],[3244,0,1,"as_uint8At","as_uint8At"]]);

@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("CClass:ZUPTSettingsData","ZUPTSettingsData");NDSummary.OnSummaryLoaded("CClass:ZUPTSettingsData",[["C/C++","C"]],[["Functions","Function"],["Structs","Struct"],["Variables","Variable"]],[[406,0,1,"ZUPTSettingsData"],[407,0,0,"ZUPTSettingsData","ZUPTSettingsData"],[408,0,2,"enabled","enabled"],[409,0,2,"threshold","threshold"]]);

@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("m_q",["Variable"],[["m_qualifier",,[["MipDataPoint",,,,0,"File:MicroStrain/MIP/MipDataPoint.h:MipDataPoint.m_qualifier","CClass:MipDataPoint:m_qualifier"]]]]);

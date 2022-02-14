@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("gyr",["Function"],[["gyroRange",,[["DeviceStatusData",,,,0,"File:MicroStrain/Inertial/ExposedInertialTypes.h:DeviceStatusData.gyroRange","CClass:DeviceStatusData:gyroRange"]]]]);

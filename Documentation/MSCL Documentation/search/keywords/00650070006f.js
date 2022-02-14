@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("epo",["Constant"],[["EPOCH_STATUS_VALID",,[["FieldParser_RTKCorrectionsStatus",,,,0,"File:MicroStrain/Inertial/Packets/InertialFieldParser_GNSS.h:FieldParser_RTKCorrectionsStatus.EPOCH_STATUS_VALID","CClass:FieldParser_RTKCorrectionsStatus:EPOCH_STATUS_VALID"]]]]);

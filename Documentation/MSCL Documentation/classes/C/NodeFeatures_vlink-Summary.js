@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("CClass:NodeFeatures_vlink","NodeFeatures_vlink");NDSummary.OnSummaryLoaded("CClass:NodeFeatures_vlink",[["C/C++","C"]],[["Classes","Class"],["Functions","Function"],["Groups","Group"]],[[5381,0,0,"NodeFeatures_vlink"],[5382,0,2,"Functions","Functions"],[5383,0,1,"NodeFeatures_vlink","NodeFeatures_vlink"]]);

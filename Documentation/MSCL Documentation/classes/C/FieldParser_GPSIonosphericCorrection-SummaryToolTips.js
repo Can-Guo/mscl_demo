@@ -1,0 +1,1 @@
+NDSummary.OnToolTipsLoaded("CClass:FieldParser_GPSIonosphericCorrection",{1492:"<div class=\"NDToolTip TClass LC\"><div class=\"NDClassPrototype\" id=\"NDClassPrototype1492\"><div class=\"CPEntry TClass Current\"><div class=\"CPName\">FieldParser_GPSIonosphericCorrection</div></div></div><div class=\"TTSummary\">The field parser for Ionospheric Correction Data</div></div>"});

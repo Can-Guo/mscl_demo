@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("rtc",["Type","Function"],[["RTCMMessage",,[[,,,,0,"File:MicroStrain/Inertial/ExposedInertialTypes.h:RTCMMessage"]]],["rtcmTimeout",,[["RTKDeviceStatusFlags",,,,1,"File:MicroStrain/Inertial/ExposedInertialTypes.h:RTKDeviceStatusFlags.rtcmTimeout","CClass:RTKDeviceStatusFlags:rtcmTimeout"]]]]);

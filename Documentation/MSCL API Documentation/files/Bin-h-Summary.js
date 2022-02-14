@@ -1,0 +1,1 @@
+NDFramePage.OnPageTitleLoaded("File:Bin.h","Bin.h");NDSummary.OnSummaryLoaded("File:Bin.h",[["C/C++","C"]],[["Classes","Class"],["Functions","Function"],["Types","Type"]],[[3456,0,0,"Bin","Bin"],[3457,0,1,"Bin","Bin.Bin"],[3458,0,1,"start","Bin.start"],[3459,0,1,"end","Bin.end"],[3460,0,1,"count","Bin.count"],[3461,0,2,"Bins","Bin.Bins"]]);

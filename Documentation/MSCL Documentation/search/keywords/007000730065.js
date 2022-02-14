@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("pse",["Constant"],[["PSEUDORANGE_VALID",,[["FieldParser_GnssRawObservation",,,,0,"File:MicroStrain/Inertial/Packets/InertialFieldParser_GNSS.h:FieldParser_GnssRawObservation.PSEUDORANGE_VALID","CClass:FieldParser_GnssRawObservation:PSEUDORANGE_VALID"]]]]);

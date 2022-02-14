@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("bau",["Function"],[["baudRate",,[["DeviceInfo",,,,0,"File:Communication/Devices.h:DeviceInfo.baudRate","CClass:DeviceInfo:baudRate"]]]]);

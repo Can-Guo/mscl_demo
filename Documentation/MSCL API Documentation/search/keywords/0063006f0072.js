@@ -1,0 +1,1 @@
+NDSearch.OnPrefixDataLoaded("cor",["Function"],[["correctionsUnavailable",,[["RTKDeviceStatusFlags",,,,0,"File:MicroStrain/Inertial/ExposedInertialTypes.h:RTKDeviceStatusFlags.correctionsUnavailable","CClass:RTKDeviceStatusFlags:correctionsUnavailable"]]]]);
