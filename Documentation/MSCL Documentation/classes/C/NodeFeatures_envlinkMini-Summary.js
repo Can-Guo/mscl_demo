@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("CClass:NodeFeatures_envlinkMini","NodeFeatures_envlinkMini");NDSummary.OnSummaryLoaded("CClass:NodeFeatures_envlinkMini",[["C/C++","C"]],[["Classes","Class"],["Functions","Function"],["Groups","Group"]],[[5494,0,0,"NodeFeatures_envlinkMini"],[5495,0,2,"Functions","Functions"],[5496,0,1,"NodeFeatures_envlinkMini","NodeFeatures_envlinkMini"]]);

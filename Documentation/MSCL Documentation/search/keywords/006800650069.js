@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("hei",["Constant"],[["HEIGHT_VALID",,[["FieldParser_GnssStationInfo",,,,0,"File:MicroStrain/Inertial/Packets/InertialFieldParser_GNSS.h:FieldParser_GnssStationInfo.HEIGHT_VALID","CClass:FieldParser_GnssStationInfo:HEIGHT_VALID"]]]]);

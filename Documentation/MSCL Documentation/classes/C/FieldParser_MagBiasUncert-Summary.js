@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("CClass:FieldParser_MagBiasUncert","FieldParser_MagBiasUncert");NDSummary.OnSummaryLoaded("CClass:FieldParser_MagBiasUncert",[["C/C++","C"]],[["Classes","Class"],["Constants","Constant"],["Groups","Group"]],[[1284,0,0,"FieldParser_MagBiasUncert"],[1285,0,2,"Constants","Constants"],[1286,0,1,"Valid Flags","Valid_Flags"],[1287,0,1,,"VALID_FLAG"]]);

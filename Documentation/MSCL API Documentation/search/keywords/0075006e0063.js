@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("unc",["Function"],[["uncertainty",,[["OdometerConfiguration",,,,0,"File:MicroStrain/Inertial/ExposedInertialTypes.h:OdometerConfiguration.uncertainty","CClass:OdometerConfiguration:uncertainty"]]]]);

@@ -1,1 +1,0 @@
-NDSummary.OnToolTipsLoaded("CClass:FieldParser_DualAntennaStatus",{1343:"<div class=\"NDToolTip TClass LC\"><div class=\"NDClassPrototype\" id=\"NDClassPrototype1343\"><div class=\"CPEntry TClass Current\"><div class=\"CPName\">FieldParser_DualAntennaStatus</div></div></div><div class=\"TTSummary\">The field parser for the filter GNSS Dual Antenna Status data</div></div>"});

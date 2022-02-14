@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("rfs",["Type","Class"],[["RfSweep",,[[,,,,0,"File:MicroStrain/DataPoint.h:RfSweep"]]],["RfSweepPacket",,[[,,,,1,"File:MicroStrain/Wireless/Packets/RfSweepPacket.h:RfSweepPacket","CClass:RfSweepPacket"]]]]);

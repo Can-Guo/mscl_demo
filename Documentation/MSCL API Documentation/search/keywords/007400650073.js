@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("tes",["Function"],[["testCommunicationProtocol",,[["WirelessNode",,,,0,"File:MicroStrain/Wireless/WirelessNode.h:WirelessNode.testCommunicationProtocol","CClass:WirelessNode:testCommunicationProtocol"]]]]);

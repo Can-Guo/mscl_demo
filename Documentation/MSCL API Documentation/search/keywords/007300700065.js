@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("spe",["Function"],[["specifier",,[["MipChannelIdentifier",,,,0,"File:MicroStrain/MIP/MipTypes.h:MipChannelIdentifier.specifier","CClass:MipChannelIdentifier:specifier"]]]]);

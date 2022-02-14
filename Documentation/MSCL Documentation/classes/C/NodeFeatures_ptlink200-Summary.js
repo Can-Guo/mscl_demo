@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("CClass:NodeFeatures_ptlink200","NodeFeatures_ptlink200");NDSummary.OnSummaryLoaded("CClass:NodeFeatures_ptlink200",[["C/C++","C"]],[["Classes","Class"],["Functions","Function"],["Groups","Group"]],[[5467,0,0,"NodeFeatures_ptlink200"],[5468,0,2,"Functions","Functions"],[5469,0,1,"NodeFeatures_ptlink200","NodeFeatures_ptlink200"]]);

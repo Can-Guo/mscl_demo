@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("dua",["Enumeration"],[["DualAntennaFixType",,[[,,,,0,"File:MicroStrain/Inertial/ExposedInertialTypes.h:DualAntennaFixType"]]],["DualAntennaStatusFlags",,[[,,,,0,"File:MicroStrain/Inertial/ExposedInertialTypes.h:DualAntennaStatusFlags"]]]]);

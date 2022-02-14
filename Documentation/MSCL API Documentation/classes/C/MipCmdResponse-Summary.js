@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("CClass:MipCmdResponse","MipCmdResponse");NDSummary.OnSummaryLoaded("CClass:MipCmdResponse",[["C/C++","C"]],[["Classes","Class"],["Functions","Function"]],[[107,0,0,"MipCmdResponse"],[108,0,1,"success","success"],[109,0,1,"errorCode","errorCode"]]);

@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("did",["Function"],[["didWrite",,[["Eeprom",,,,0,"File:MicroStrain/Wireless/Configuration/Eeprom.h:Eeprom.didWrite","CClass:Eeprom:didWrite"]]]]);

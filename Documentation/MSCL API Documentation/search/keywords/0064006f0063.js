@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("doc",["Function"],[["doCommand",,[["DisplacementNode",,,,0,"File:MicroStrain/Displacement/DisplacementNode.h:DisplacementNode.doCommand","CClass:DisplacementNode:doCommand"],["MipNode",,,,0,"File:MicroStrain/MIP/MipNode.h:MipNode.doCommand","CClass:MipNode:doCommand"]]]]);

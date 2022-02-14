@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("uar",["Class","Function"],[["UARTBaudRate",,[[,,,,0,"File:MicroStrain/Inertial/Commands/UARTBaudRate.h:UARTBaudRate","CClass:UARTBaudRate"],["UARTBaudRate","Constructor UARTBaudRate",,,1,"File:MicroStrain/Inertial/Commands/UARTBaudRate.h:UARTBaudRate.Constructor_UARTBaudRate","CClass:UARTBaudRate:Constructor_UARTBaudRate"]]]]);

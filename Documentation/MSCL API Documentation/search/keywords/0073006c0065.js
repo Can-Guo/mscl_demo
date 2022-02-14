@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("sle",["Function","Enumeration"],[["sleep",,[["WirelessNode",,,,0,"File:MicroStrain/Wireless/WirelessNode.h:WirelessNode.sleep","CClass:WirelessNode:sleep"],[,"SLEEP",,,1,"File:MicroStrain/Inertial/ExposedInertialTypes.h:SLEEP"]]]]);

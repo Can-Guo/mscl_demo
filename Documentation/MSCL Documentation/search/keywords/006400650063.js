@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("dec",["Function","Class"],[["Decimation",,[["SampleRate",,,,0,"File:MicroStrain/SampleRate.h:SampleRate.Decimation","CClass:SampleRate:Decimation"]]],["DeclinationSource",,[[,,,,1,"File:MicroStrain/Inertial/Commands/GeographicSource.h:DeclinationSource","CClass:DeclinationSource"]]]]);

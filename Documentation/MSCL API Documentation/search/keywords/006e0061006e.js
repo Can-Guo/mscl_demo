@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("nan",["Function"],[["NanoSeconds",,[["Timestamp","nanoseconds",,,0,"File:Timestamp.h:Timestamp.nanoseconds","CClass:Timestamp:nanoseconds"],["TimeSpan",,,,0,"File:TimeSpan.h:TimeSpan.NanoSeconds","CClass:TimeSpan:NanoSeconds"]]]]);

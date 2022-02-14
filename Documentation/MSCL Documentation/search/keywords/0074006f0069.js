@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("toi",["Function"],[["toInvertedByte",,[["DeliveryStopFlags",,,,0,"File:MicroStrain/Wireless/DeliveryStopFlags.h:DeliveryStopFlags.toInvertedByte","CClass:DeliveryStopFlags:toInvertedByte"]]]]);

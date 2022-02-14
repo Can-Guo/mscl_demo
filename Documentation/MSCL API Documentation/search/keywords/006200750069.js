@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("bui",["Function"],[["builtInTestResult",,[["NodeDiscovery",,,,0,"File:MicroStrain/Wireless/NodeDiscovery.h:NodeDiscovery.builtInTestResult","CClass:NodeDiscovery:builtInTestResult"]]]]);

@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("enc",["Enumeration"],[["EncoderBehavior",,[["GpioConfiguration",,,,0,"File:MicroStrain/Inertial/ExposedInertialTypes.h:GpioConfiguration.EncoderBehavior","CClass:GpioConfiguration:EncoderBehavior"]]]]);

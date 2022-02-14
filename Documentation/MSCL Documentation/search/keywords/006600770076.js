@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("fwv",["Variable"],[["fwVersion",,[["MipDeviceInfo",,,,0,"File:MicroStrain/MIP/Commands/GetDeviceInfo.h:MipDeviceInfo.fwVersion","CClass:MipDeviceInfo:fwVersion"]]]]);

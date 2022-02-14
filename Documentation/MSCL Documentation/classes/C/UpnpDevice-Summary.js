@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("CClass:UpnpDevice","UpnpDevice");NDSummary.OnSummaryLoaded("CClass:UpnpDevice",[["C/C++","C"]],[["Structs","Struct"]],[[1,0,0,"UpnpDevice"]]);

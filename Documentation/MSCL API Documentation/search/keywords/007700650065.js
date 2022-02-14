@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("wee",["Function"],[["weekNumber",,[["TimeUpdate",,,,0,"File:MicroStrain/Inertial/ExposedInertialTypes.h:TimeUpdate.weekNumber","CClass:TimeUpdate:weekNumber"]]]]);

@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("sha",["Function"],[["SHARED_DATA_FIELDS",,[["MipTypes",,,,0,"File:MicroStrain/MIP/MipTypes.h:MipTypes.SHARED_DATA_FIELDS","CClass:MipTypes:SHARED_DATA_FIELDS"]]]]);

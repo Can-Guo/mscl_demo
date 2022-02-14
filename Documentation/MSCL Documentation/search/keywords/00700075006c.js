@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("pul",["Function"],[["pullUpResistor",,[["WirelessNodeConfig",,,,0,"File:MicroStrain/Wireless/Configuration/WirelessNodeConfig.h:WirelessNodeConfig.pullUpResistor","CClass:WirelessNodeConfig:pullUpResistor"]]]]);

@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("wor",["Constant"],[["WORLD_MAGNETIC_MODEL",,[[,,,,0,"File:MicroStrain/Inertial/ExposedInertialTypes.h:WORLD_MAGNETIC_MODEL"]]]]);

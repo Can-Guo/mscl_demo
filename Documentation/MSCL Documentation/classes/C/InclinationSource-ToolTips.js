@@ -1,1 +1,0 @@
-NDContentPage.OnToolTipsLoaded({708:"<div class=\"NDToolTip TClass LC\"><div class=\"NDClassPrototype\" id=\"NDClassPrototype708\"><div class=\"CPEntry TClass Current\"><div class=\"CPName\">GeographicSource</div></div></div><div class=\"TTSummary\">Contains the logic for the Inertial GeographicSource command.</div></div>"});

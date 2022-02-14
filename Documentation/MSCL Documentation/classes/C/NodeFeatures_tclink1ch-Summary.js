@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("CClass:NodeFeatures_tclink1ch","NodeFeatures_tclink1ch");NDSummary.OnSummaryLoaded("CClass:NodeFeatures_tclink1ch",[["C/C++","C"]],[["Classes","Class"],["Functions","Function"],["Groups","Group"]],[[5418,0,0,"NodeFeatures_tclink1ch"],[5419,0,2,"Functions","Functions"],[5420,0,1,"NodeFeatures_tclink1ch","NodeFeatures_tclink1ch"]]);

@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("asv",["Function"],[["asValueMap",,[["DeviceStatusData",,,,0,"File:MicroStrain/Inertial/ExposedInertialTypes.h:DeviceStatusData.asValueMap","CClass:DeviceStatusData:asValueMap"]]]]);

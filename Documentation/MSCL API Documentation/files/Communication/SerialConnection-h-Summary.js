@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("File:Communication/SerialConnection.h","SerialConnection.h");NDSummary.OnSummaryLoaded("File:Communication/SerialConnection.h",[["C/C++","C"]],[["Functions","Function"]],[[27,0,0,"updateBaudRate","updateBaudRate"]]);

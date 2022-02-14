@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("bit",["Function","Class"],[["Bitfield",,[[,,,,0,"File:MicroStrain/Bitfield.h:Bitfield"]]],["bitIsSet",,[["Utils",,,,0,"File:Utils.h:Utils.bitIsSet","CClass:Utils:bitIsSet"]]],["BitMask",,[[,,,,1,"File:BitMask.h:BitMask","CClass:BitMask"]]]]);

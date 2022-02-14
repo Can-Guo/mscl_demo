@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("rss",["Function"],[["rssi",,[["RTKDeviceStatusFlags",,,,0,"File:MicroStrain/Inertial/ExposedInertialTypes.h:RTKDeviceStatusFlags.rssi","CClass:RTKDeviceStatusFlags:rssi"]]]]);

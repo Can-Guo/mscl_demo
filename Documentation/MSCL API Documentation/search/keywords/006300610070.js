@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("cap",["Function"],[["captureGyroBias",,[["InertialNode",,,,0,"File:MicroStrain/Inertial/InertialNode.h:InertialNode.captureGyroBias","CClass:InertialNode:captureGyroBias"]]]]);

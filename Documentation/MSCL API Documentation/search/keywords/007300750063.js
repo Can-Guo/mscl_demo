@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("suc",["Function"],[["success",,[["MipCmdResponse",,,,0,"File:MicroStrain/MIP/Commands/MipCmdResponse.h:MipCmdResponse.success","CClass:MipCmdResponse:success"],["PingResponse",,,,0,"File:MicroStrain/Wireless/Commands/PingResponse.h:PingResponse.success","CClass:PingResponse:success"]]]]);

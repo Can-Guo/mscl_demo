@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("por",["Function","Struct"],[["port",,[["WsdaInfo",,,,0,"File:Communication/WsdaFinder.h:WsdaInfo.port","CClass:WsdaInfo:port"]]],["PortInfo",,[[,,,,1,"File:MicroStrain/Inertial/ExposedInertialTypes.h:PortInfo","CClass:PortInfo"]]]]);

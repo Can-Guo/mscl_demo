@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("yaw",["Function"],[["yaw",,[["EulerAngles",,,,0,"File:MicroStrain/Inertial/EulerAngles.h:EulerAngles.yaw","CClass:EulerAngles:yaw"]]]]);

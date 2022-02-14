@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("sni",["Constant"],[["SNIFF_DURATION",,[["NodeEepromMap",,,,0,"File:MicroStrain/Wireless/Configuration/NodeEepromMap.h:NodeEepromMap.SNIFF_DURATION","CClass:NodeEepromMap:SNIFF_DURATION"]]]]);

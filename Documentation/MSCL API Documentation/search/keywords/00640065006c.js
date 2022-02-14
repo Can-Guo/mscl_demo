@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("del",["Enumeration"],[["DelayVersion",,[["WirelessTypes",,,,0,"File:MicroStrain/Wireless/WirelessTypes.h:WirelessTypes.DelayVersion","CClass:WirelessTypes:DelayVersion"]]]]);

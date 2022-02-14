@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("pit",["Function","Class"],[["pitch",,[["EulerAngles",,,,0,"File:MicroStrain/Inertial/EulerAngles.h:EulerAngles.pitch","CClass:EulerAngles:pitch"]]],["PitchRollAidControl",,[[,,,,1,"File:MicroStrain/Inertial/Commands/EstFilter_Commands.h:PitchRollAidControl","CClass:PitchRollAidControl"]]]]);

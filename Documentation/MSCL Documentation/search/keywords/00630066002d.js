@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("cf-",["Constant"],[["CF-Bearing-Temp-Link",,[["AvailableSampleRates","CF-Bearing-Temp-Link SampleRates",,,0,"File:MicroStrain/Wireless/Features/AvailableSampleRates.h:AvailableSampleRates.CF-Bearing-Temp-Link_SampleRates","CClass:AvailableSampleRates:CF-Bearing-Temp-Link_SampleRates"]]]]);

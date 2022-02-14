@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("CClass:AutoBalance","AutoBalance");NDSummary.OnSummaryLoaded("CClass:AutoBalance",[["C/C++","C"]],[["Classes","Class"],["Functions","Function"],["Groups","Group"]],[[4338,0,0,"AutoBalance"],[4339,0,2,"Functions","Functions"],[4340,0,1,"buildCommand","buildCommand"]]);

@@ -1,1 +1,0 @@
-NDFramePage.OnPageTitleLoaded("CClass:FieldParser_NedRelativePos","FieldParser_NedRelativePos");NDSummary.OnSummaryLoaded("CClass:FieldParser_NedRelativePos",[["C/C++","C"]],[["Classes","Class"],["Constants","Constant"],["Groups","Group"]],[[1334,0,0,"FieldParser_NedRelativePos"],[1335,0,2,"Constants","Constants"],[1336,0,1,"Valid Flags","Valid_Flags"],[1337,0,1,,"VALID_FLAG"]]);

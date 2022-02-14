@@ -1,1 +1,0 @@
-NDSearch.OnPrefixDataLoaded("0x9",["Constant"],[["0x90",,[["DescriptorSet","DESC_SET_DATA_DISPLACEMENT- 0x90",,"desc_set_data_displacement-0x90",0,"File:MicroStrain/MIP/Packets/MipPacket.h:DescriptorSet.DESC_SET_DATA_DISPLACEMENT-0x90","CClass:DescriptorSet:DESC_SET_DATA_DISPLACEMENT-0x90"]]]]);
