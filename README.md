@@ -6,33 +6,33 @@ This is an example demo based on [mscl](https://github.com/LORD-MicroStrain/MSCL
 
 ## Project Overview
 ```bash
-mscl_demo
-├── example_cpp
-│   ├── bin
-│   │   ├── example_class
-│   │   └── example_demo
-│   ├── build     
-│   ├── CMakeLists.txt
-│   ├── cpp_mscl_class_demo.cpp
-│   ├── cpp_mscl_demo.cpp
-│   └── cpp_mscl_demo_simple.cpp
-├── example_python
-│   ├── csv
+mscl_demo                                           #   Project Top Folder
+├── example_cpp                                     #   cpp 
+│   ├── bin                                         #   generated executable files of cpp inside
+│   │   ├── example_class                           #   demo 2 generated executable file of cpp
+│   │   └── example_demo                            #   demo 1 generated executable file of cpp
+│   ├── build                                       #   CMake generated files
+│   ├── CMakeLists.txt                              #   CMake configuration file for compile, assemble and link to the target
+│   ├── cpp_mscl_class_demo.cpp                     #   cpp demo 2 source file based on Class
+│   └── cpp_mscl_demo_simple.cpp                    #   cpp demo 1 source file based on procedure
+│
+├── example_python                                  #   python
+│   ├── csv                                         #   generated csv file for data recording by Python
 │   │   ├── data_2022-02-13 12:58:57.227380.csv
-│   │   ├── data_2022-02-13 13:44:25.828601.csv
+│   │   ├── data_2022-02-13 13:44:25.828601.csv     
 │   │   └── data_2022-02-13 13:47:43.859994.csv
-│   ├── fig
+│   ├── fig                                         #   generated png figure file after plotting the data recorded by Python
 │   │   ├── 2022-02-13 13:42:35.099423.png
 │   │   ├── 2022-02-13 13:43:56.991011.png
 │   │   └── 2022-02-13 13:48:51.539636.png
-│   └── python_mscl_demo
-│       ├── python3_mscl_demo.py
-│       ├── python_mscl_class_demo.py
-│       └── python_mscl_demo_simple.py
-├── install_package
-│   ├── c++-mscl_63.1.0_amd64.deb
-│   └── python3-mscl_63.1.0_amd64.deb
-└── README.md
+│   └── python_mscl_demo                            #   python source files
+│       ├── python_mscl_class_demo.py               #   python demo 2 based on Class
+│       └── python_mscl_demo_simple.py              #   python demo 1 based on procedure
+│
+├── install_package                                 #   Please refer to https://github.com/LORD-MicroStrain/MSCL/blob/master/README.md
+│   ├── c++-mscl_63.1.0_amd64.deb                   #   Pre-built Linux packages for cpp
+│   └── python3-mscl_63.1.0_amd64.deb               #   Pre-built Linux packages for python
+└── README.md                                          
 ```
 
 ## Installation
