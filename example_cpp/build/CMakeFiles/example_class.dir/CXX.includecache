@@ -13,6 +13,8 @@ string.h
 -
 stdio.h
 -
+vector
+-
 mscl/mscl.h
 /home/guoyucan/Downloads/mscl_demo/example_cpp/mscl/mscl.h
 

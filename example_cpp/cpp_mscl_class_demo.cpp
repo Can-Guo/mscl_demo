@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-02-13 14:54:30
  * @LastEditors: Guo Yuqin,12032421@mail.sustech.edu.cn
- * @LastEditTime: 2022-02-16 13:01:30
+ * @LastEditTime: 2022-02-16 15:58:24
  * @FilePath: /Downloads/mscl_demo/example_cpp/cpp_mscl_class_demo.cpp
  */
 
@@ -9,8 +9,8 @@
 #include <iostream>
 #include <string.h>
 #include <stdio.h>
+#include <vector>
 
-// #include <tchar.h>
 
 using namespace std;
 #include "mscl/mscl.h"
@@ -42,9 +42,24 @@ private:
         float accel_z;
     };
 
+public:
+
     struct ACCELERATION_EULER_ANGLE{
         ACCELERATION Acceleration;
         EULER_ANGLE Euler_Angle;
+
+        // constructor of structure
+        ACCELERATION_EULER_ANGLE()
+        {
+            Acceleration = {0.0, 0.0, 0.0};
+            Euler_Angle = {0.0, 0.0, 0.0};
+        }
+
+        ACCELERATION_EULER_ANGLE(ACCELERATION Acceleration, EULER_ANGLE Euler_Angle)
+        {
+            Acceleration = Acceleration;
+            Euler_Angle = Euler_Angle;
+        }
     };
 
     ACCELERATION_EULER_ANGLE acceleration_euler_angle;
@@ -54,6 +69,7 @@ public:
     /* data */
 
     ACCELERATION_EULER_ANGLE accele_euler;
+    vector <AHRS_IMU::ACCELERATION_EULER_ANGLE> acceleration_euler_list;
 
     /* data */
 
@@ -77,7 +93,7 @@ public:
     AHRS_IMU::ACCELERATION_EULER_ANGLE parseDataPacket_AHRS_IMU(int Timeout_ms);
 
     //TODO: not finish Method or feature for multi-packets Data access
-    // AHRS_IMU::ACCELERATION_EULER_ANGLE* parseDataStream_AHRS_IMU(int Timeout_ms, int PacketNumber);
+    vector <AHRS_IMU::ACCELERATION_EULER_ANGLE> parseDataStream_AHRS_IMU(int Timeout_ms, int PacketNumber);
 
     //TODO: not finish Method or feature for data recording and plotting
     string createCSV();
@@ -210,59 +226,61 @@ AHRS_IMU::ACCELERATION_EULER_ANGLE AHRS_IMU::parseDataPacket_AHRS_IMU(int Timeou
 }
 
 
-// TODO:multi packets for Acceleration and Euler Angle
+// multi packets for Acceleration and Euler Angle
 
-// AHRS_IMU::ACCELERATION_EULER_ANGLE* parseDataStream_AHRS_IMU(int Timeout_ms, int PacketNumber)
-// {
-//     cout << "\r\nParse Data Stream ..." << endl;
+vector <AHRS_IMU::ACCELERATION_EULER_ANGLE>  AHRS_IMU::parseDataStream_AHRS_IMU(int Timeout_ms, int PacketNumber)
+{
+    cout << "\r\nParse Data Stream ..." << endl;
 
-//     struct AHRS_IMU::EULER_ANGLE euler_angle = {0.0, 0.0, 0.0};
-//     struct AHRS_IMU::ACCELERATION acceleration = {0.0, 0.0, 0.0};
+    struct AHRS_IMU::EULER_ANGLE euler_angle = {0.0, 0.0, 0.0};
+    struct AHRS_IMU::ACCELERATION acceleration = {0.0, 0.0, 0.0};
 
-//     mscl::InertialNode node(AHRS_IMU::connection);
-//     mscl::MipDataPackets packets = node.getDataPackets(Timeout_ms, PacketNumber);
+    // vector<AHRS_IMU::ACCELERATION_EULER_ANGLE>  acceleration_euler_list;
+    // acceleration_euler_list.push_back(ACCELERATION_EULER_ANGLE());
 
-//     AHRS_IMU::ACCELERATION_EULER_ANGLE acceleration_euler_list[PacketNumber]={};
+    mscl::InertialNode node(AHRS_IMU::connection);
+    mscl::MipDataPackets packets = node.getDataPackets(Timeout_ms, PacketNumber);
 
-//     for(int i=0; i<PacketNumber; i++)
-//     {
-//         for(mscl::MipDataPacket packet : packets)
-//         {
-//             packet.descriptorSet(); // the descriptor set of the packet
+    for(int i=0; i<PacketNumber; i++)
+    {
+        for(mscl::MipDataPacket packet : packets)
+        {
+            packet.descriptorSet(); // the descriptor set of the packet
 
-//             // get all of the points in the packet
-//             mscl::MipDataPoints points = packet.data();
+            // get all of the points in the packet
+            mscl::MipDataPoints points = packet.data();
 
-//             for(mscl::MipDataPoint dataPoint : points)
-//             {
-//                 // cout << "Data frame:" << right<<setw(15) << dataPoint.channelName() << " |"<<right<<setw(3) << dataPoint.storedAs()<<" | "<<right<<setw(15)<<dataPoint.as_float()<<endl;
+            for(mscl::MipDataPoint dataPoint : points)
+            {
+                // cout << "Data frame:" << right<<setw(15) << dataPoint.channelName() << " |"<<right<<setw(3) << dataPoint.storedAs()<<" | "<<right<<setw(15)<<dataPoint.as_float()<<endl;
                 
-//                 if (dataPoint.channelName() == string("roll"))
-//                     euler_angle.roll  = dataPoint.as_float();
-//                 if (dataPoint.channelName() == string("pitch"))
-//                     euler_angle.pitch = dataPoint.as_float();
-//                 if (dataPoint.channelName() == string("yaw"))
-//                     euler_angle.yaw   = dataPoint.as_float();
-//                 if (dataPoint.channelName() == string("scaledAccelX"))
-//                     acceleration.accel_x = dataPoint.as_float();
-//                 if (dataPoint.channelName() == string("scaledAccelY"))
-//                     acceleration.accel_y = dataPoint.as_float();
-//                 if (dataPoint.channelName() == string("scaledAccelZ"))
-//                     acceleration.accel_z = dataPoint.as_float();
+                if (dataPoint.channelName() == string("roll"))
+                    euler_angle.roll  = dataPoint.as_float();
+                if (dataPoint.channelName() == string("pitch"))
+                    euler_angle.pitch = dataPoint.as_float();
+                if (dataPoint.channelName() == string("yaw"))
+                    euler_angle.yaw   = dataPoint.as_float();
+                if (dataPoint.channelName() == string("scaledAccelX"))
+                    acceleration.accel_x = dataPoint.as_float();
+                if (dataPoint.channelName() == string("scaledAccelY"))
+                    acceleration.accel_y = dataPoint.as_float();
+                if (dataPoint.channelName() == string("scaledAccelZ"))
+                    acceleration.accel_z = dataPoint.as_float();
 
-//             }
+            }
 
-//             acceleration_euler_list[i].Acceleration = acceleration;
-//             acceleration_euler_list[i].Euler_Angle = euler_angle;
-//         }
+            acceleration_euler_list.push_back({{acceleration},{euler_angle}});
+
+
+        }
         
-//         if (i==PacketNumber-1)
-//         {
-//             break;
-//         }
-//     }
-//     return acceleration_euler_list;
-// }
+        if (i==PacketNumber-1)
+        {
+            break;
+        }
+    }
+    return acceleration_euler_list;
+}
 
 // TODO: create a CSV file for data recording
 // string createCSV()
@@ -301,7 +319,14 @@ int main(int argc, char ** argv)
     cout <<left<<setw(15) << "Euler Angle " <<":" <<right<<setw(15)<< imu.accele_euler.Euler_Angle.roll << " | " <<right<<setw(15)<< imu.accele_euler.Euler_Angle.pitch << " | " <<right<<setw(15)<< imu.accele_euler.Euler_Angle.yaw << endl;
     
 
-    // TODO: Parse PacketNumber packets of data stream
+    // Parse PacketNumber packets of data stream
+    int PacketNumber = 10;
+    vector <AHRS_IMU::ACCELERATION_EULER_ANGLE> accel_euler_list = imu.parseDataStream_AHRS_IMU(500, PacketNumber);
+    for(int i=0; i<PacketNumber; i++)
+    {
+        cout <<left<<setw(15) << "Acceleration " <<":" <<right<<setw(15)<< accel_euler_list[i].Acceleration.accel_x << " | " << endl;
+        cout <<left<<setw(15) << "Euler Angle " <<":" <<right<<setw(15)<< accel_euler_list[i].Euler_Angle.roll << " | " << endl;
+    }    
 
 
     // TODO: Parse PacketNumber packets and record data stream into CSV file

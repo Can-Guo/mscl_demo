@@ -5,8 +5,35 @@ This is an example demo based on [mscl](https://github.com/LORD-MicroStrain/MSCL
 
 
 ## Project Overview
-
-
+```bash
+mscl_demo
+├── example_cpp
+│   ├── bin
+│   │   ├── example_class
+│   │   └── example_demo
+│   ├── build     
+│   ├── CMakeLists.txt
+│   ├── cpp_mscl_class_demo.cpp
+│   ├── cpp_mscl_demo.cpp
+│   └── cpp_mscl_demo_simple.cpp
+├── example_python
+│   ├── csv
+│   │   ├── data_2022-02-13 12:58:57.227380.csv
+│   │   ├── data_2022-02-13 13:44:25.828601.csv
+│   │   └── data_2022-02-13 13:47:43.859994.csv
+│   ├── fig
+│   │   ├── 2022-02-13 13:42:35.099423.png
+│   │   ├── 2022-02-13 13:43:56.991011.png
+│   │   └── 2022-02-13 13:48:51.539636.png
+│   └── python_mscl_demo
+│       ├── python3_mscl_demo.py
+│       ├── python_mscl_class_demo.py
+│       └── python_mscl_demo_simple.py
+├── install_package
+│   ├── c++-mscl_63.1.0_amd64.deb
+│   └── python3-mscl_63.1.0_amd64.deb
+└── README.md
+```
 
 ## Installation
 Follow steps to install MSCL libraries for python3 or cpp on [HowToUseMSCL](https://github.com/LORD-MicroStrain/MSCL/blob/master/HowToUseMSCL.md?).
