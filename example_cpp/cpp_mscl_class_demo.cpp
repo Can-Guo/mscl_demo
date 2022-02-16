@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-02-13 14:54:30
  * @LastEditors: Guo Yuqin,12032421@mail.sustech.edu.cn
- * @LastEditTime: 2022-02-16 12:42:45
+ * @LastEditTime: 2022-02-16 13:01:30
  * @FilePath: /Downloads/mscl_demo/example_cpp/cpp_mscl_class_demo.cpp
  */
 
@@ -48,6 +48,7 @@ private:
     };
 
     ACCELERATION_EULER_ANGLE acceleration_euler_angle;
+
 
 public:
     /* data */
