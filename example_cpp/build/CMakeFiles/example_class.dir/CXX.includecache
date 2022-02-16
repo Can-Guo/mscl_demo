@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/guoyucan/Downloads/Microstrain/example_cpp/cpp_mscl_class_demo.cpp
+/home/guoyucan/Downloads/mscl_demo/example_cpp/cpp_mscl_class_demo.cpp
 iostream
 -
 string.h
@@ -14,7 +14,7 @@ string.h
 stdio.h
 -
 mscl/mscl.h
-/home/guoyucan/Downloads/Microstrain/example_cpp/mscl/mscl.h
+/home/guoyucan/Downloads/mscl_demo/example_cpp/mscl/mscl.h
 
 /usr/share/c++-mscl/Boost/include/boost/assert.hpp
 boost/config.hpp

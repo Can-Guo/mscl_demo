@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/guoyucan/Downloads/Microstrain/example_cpp
+CMAKE_SOURCE_DIR = /home/guoyucan/Downloads/mscl_demo/example_cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/guoyucan/Downloads/Microstrain/example_cpp/build
+CMAKE_BINARY_DIR = /home/guoyucan/Downloads/mscl_demo/example_cpp/build
 
 # Utility rule file for NightlyBuild.
 
@@ -71,6 +71,6 @@ CMakeFiles/NightlyBuild.dir/clean:
 .PHONY : CMakeFiles/NightlyBuild.dir/clean
 
 CMakeFiles/NightlyBuild.dir/depend:
-	cd /home/guoyucan/Downloads/Microstrain/example_cpp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/guoyucan/Downloads/Microstrain/example_cpp /home/guoyucan/Downloads/Microstrain/example_cpp /home/guoyucan/Downloads/Microstrain/example_cpp/build /home/guoyucan/Downloads/Microstrain/example_cpp/build /home/guoyucan/Downloads/Microstrain/example_cpp/build/CMakeFiles/NightlyBuild.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/guoyucan/Downloads/mscl_demo/example_cpp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/guoyucan/Downloads/mscl_demo/example_cpp /home/guoyucan/Downloads/mscl_demo/example_cpp /home/guoyucan/Downloads/mscl_demo/example_cpp/build /home/guoyucan/Downloads/mscl_demo/example_cpp/build /home/guoyucan/Downloads/mscl_demo/example_cpp/build/CMakeFiles/NightlyBuild.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/NightlyBuild.dir/depend
 

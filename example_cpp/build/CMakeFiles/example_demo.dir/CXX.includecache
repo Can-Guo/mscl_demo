@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/guoyucan/Downloads/Microstrain/example_cpp/cpp_mscl_demo.cpp
+/home/guoyucan/Downloads/mscl_demo/example_cpp/cpp_mscl_demo.cpp
 iostream
 -
 mscl/mscl.h
-/home/guoyucan/Downloads/Microstrain/example_cpp/mscl/mscl.h
+/home/guoyucan/Downloads/mscl_demo/example_cpp/mscl/mscl.h
 
 /usr/share/c++-mscl/Boost/include/boost/assert.hpp
 boost/config.hpp

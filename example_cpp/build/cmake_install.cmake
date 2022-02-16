@@ -1,4 +1,4 @@
-# Install script for directory: /home/guoyucan/Downloads/Microstrain/example_cpp
+# Install script for directory: /home/guoyucan/Downloads/mscl_demo/example_cpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/guoyucan/Downloads/Microstrain/example_cpp/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/guoyucan/Downloads/mscl_demo/example_cpp/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

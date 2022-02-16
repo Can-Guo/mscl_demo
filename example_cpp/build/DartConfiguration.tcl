@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/guoyucan/Downloads/Microstrain/example_cpp
-BuildDirectory: /home/guoyucan/Downloads/Microstrain/example_cpp/build
+SourceDirectory: /home/guoyucan/Downloads/mscl_demo/example_cpp
+BuildDirectory: /home/guoyucan/Downloads/mscl_demo/example_cpp/build
 
 # Where to place the cost data store
 CostDataFile: 
@@ -36,7 +36,7 @@ ScpCommand: /usr/bin/scp
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/guoyucan/Downloads/Microstrain/example_cpp"
+ConfigureCommand: "/usr/bin/cmake" "/home/guoyucan/Downloads/mscl_demo/example_cpp"
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 
