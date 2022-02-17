@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/guoyucan/Downloads/mscl_demo/example_cpp/cpp_mscl_demo.cpp
+/home/guoyucan/Downloads/mscl_demo/example_cpp/cpp_mscl_demo_simple.cpp
 iostream
 -
 mscl/mscl.h

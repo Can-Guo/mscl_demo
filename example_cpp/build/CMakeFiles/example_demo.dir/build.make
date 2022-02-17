@@ -57,38 +57,38 @@ include CMakeFiles/example_demo.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/example_demo.dir/flags.make
 
-CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.o: CMakeFiles/example_demo.dir/flags.make
-CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.o: ../cpp_mscl_demo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guoyucan/Downloads/mscl_demo/example_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.o -c /home/guoyucan/Downloads/mscl_demo/example_cpp/cpp_mscl_demo.cpp
+CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.o: CMakeFiles/example_demo.dir/flags.make
+CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.o: ../cpp_mscl_demo_simple.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/guoyucan/Downloads/mscl_demo/example_cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.o -c /home/guoyucan/Downloads/mscl_demo/example_cpp/cpp_mscl_demo_simple.cpp
 
-CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guoyucan/Downloads/mscl_demo/example_cpp/cpp_mscl_demo.cpp > CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.i
+CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/guoyucan/Downloads/mscl_demo/example_cpp/cpp_mscl_demo_simple.cpp > CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.i
 
-CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guoyucan/Downloads/mscl_demo/example_cpp/cpp_mscl_demo.cpp -o CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.s
+CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/guoyucan/Downloads/mscl_demo/example_cpp/cpp_mscl_demo_simple.cpp -o CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.s
 
-CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.o.requires:
+CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.o.requires:
 
-.PHONY : CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.o.requires
+.PHONY : CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.o.requires
 
-CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.o.provides: CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.o.requires
-	$(MAKE) -f CMakeFiles/example_demo.dir/build.make CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.o.provides.build
-.PHONY : CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.o.provides
+CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.o.provides: CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.o.requires
+	$(MAKE) -f CMakeFiles/example_demo.dir/build.make CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.o.provides.build
+.PHONY : CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.o.provides
 
-CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.o.provides.build: CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.o
+CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.o.provides.build: CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.o
 
 
 # Object files for target example_demo
 example_demo_OBJECTS = \
-"CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.o"
+"CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.o"
 
 # External object files for target example_demo
 example_demo_EXTERNAL_OBJECTS =
 
-../bin/example_demo: CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.o
+../bin/example_demo: CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.o
 ../bin/example_demo: CMakeFiles/example_demo.dir/build.make
 ../bin/example_demo: /usr/share/c++-mscl/libmscl.so
 ../bin/example_demo: CMakeFiles/example_demo.dir/link.txt
@@ -100,7 +100,7 @@ CMakeFiles/example_demo.dir/build: ../bin/example_demo
 
 .PHONY : CMakeFiles/example_demo.dir/build
 
-CMakeFiles/example_demo.dir/requires: CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.o.requires
+CMakeFiles/example_demo.dir/requires: CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.o.requires
 
 .PHONY : CMakeFiles/example_demo.dir/requires
 

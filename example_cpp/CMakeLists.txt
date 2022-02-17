@@ -9,7 +9,7 @@ include(CPack)
 enable_testing()
 
 
-add_executable(example_demo ${PROJECT_SOURCE_DIR}/cpp_mscl_demo.cpp)
+add_executable(example_demo ${PROJECT_SOURCE_DIR}/cpp_mscl_demo_simple.cpp)
 add_executable(example_class ${PROJECT_SOURCE_DIR}/cpp_mscl_class_demo.cpp)
 
 

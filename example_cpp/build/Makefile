@@ -560,32 +560,32 @@ cpp_mscl_class_demo.cpp.s:
 	$(MAKE) -f CMakeFiles/example_class.dir/build.make CMakeFiles/example_class.dir/cpp_mscl_class_demo.cpp.s
 .PHONY : cpp_mscl_class_demo.cpp.s
 
-cpp_mscl_demo.o: cpp_mscl_demo.cpp.o
+cpp_mscl_demo_simple.o: cpp_mscl_demo_simple.cpp.o
 
-.PHONY : cpp_mscl_demo.o
+.PHONY : cpp_mscl_demo_simple.o
 
 # target to build an object file
-cpp_mscl_demo.cpp.o:
-	$(MAKE) -f CMakeFiles/example_demo.dir/build.make CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.o
-.PHONY : cpp_mscl_demo.cpp.o
+cpp_mscl_demo_simple.cpp.o:
+	$(MAKE) -f CMakeFiles/example_demo.dir/build.make CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.o
+.PHONY : cpp_mscl_demo_simple.cpp.o
 
-cpp_mscl_demo.i: cpp_mscl_demo.cpp.i
+cpp_mscl_demo_simple.i: cpp_mscl_demo_simple.cpp.i
 
-.PHONY : cpp_mscl_demo.i
+.PHONY : cpp_mscl_demo_simple.i
 
 # target to preprocess a source file
-cpp_mscl_demo.cpp.i:
-	$(MAKE) -f CMakeFiles/example_demo.dir/build.make CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.i
-.PHONY : cpp_mscl_demo.cpp.i
+cpp_mscl_demo_simple.cpp.i:
+	$(MAKE) -f CMakeFiles/example_demo.dir/build.make CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.i
+.PHONY : cpp_mscl_demo_simple.cpp.i
 
-cpp_mscl_demo.s: cpp_mscl_demo.cpp.s
+cpp_mscl_demo_simple.s: cpp_mscl_demo_simple.cpp.s
 
-.PHONY : cpp_mscl_demo.s
+.PHONY : cpp_mscl_demo_simple.s
 
 # target to generate assembly for a file
-cpp_mscl_demo.cpp.s:
-	$(MAKE) -f CMakeFiles/example_demo.dir/build.make CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.s
-.PHONY : cpp_mscl_demo.cpp.s
+cpp_mscl_demo_simple.cpp.s:
+	$(MAKE) -f CMakeFiles/example_demo.dir/build.make CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.s
+.PHONY : cpp_mscl_demo_simple.cpp.s
 
 # Help Target
 help:
@@ -631,9 +631,9 @@ help:
 	@echo "... cpp_mscl_class_demo.o"
 	@echo "... cpp_mscl_class_demo.i"
 	@echo "... cpp_mscl_class_demo.s"
-	@echo "... cpp_mscl_demo.o"
-	@echo "... cpp_mscl_demo.i"
-	@echo "... cpp_mscl_demo.s"
+	@echo "... cpp_mscl_demo_simple.o"
+	@echo "... cpp_mscl_demo_simple.i"
+	@echo "... cpp_mscl_demo_simple.s"
 .PHONY : help
 
 

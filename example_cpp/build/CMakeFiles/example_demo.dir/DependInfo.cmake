@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/guoyucan/Downloads/mscl_demo/example_cpp/cpp_mscl_demo.cpp" "/home/guoyucan/Downloads/mscl_demo/example_cpp/build/CMakeFiles/example_demo.dir/cpp_mscl_demo.cpp.o"
+  "/home/guoyucan/Downloads/mscl_demo/example_cpp/cpp_mscl_demo_simple.cpp" "/home/guoyucan/Downloads/mscl_demo/example_cpp/build/CMakeFiles/example_demo.dir/cpp_mscl_demo_simple.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

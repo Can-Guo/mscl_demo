@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-02-11 22:16:13
  * @LastEditors: Guo Yuqin,12032421@mail.sustech.edu.cn
- * @LastEditTime: 2022-02-14 10:39:28
+ * @LastEditTime: 2022-02-17 00:07:14
  * @FilePath: /example_cpp/cpp_mscl_demo_simple.cpp
  */
 
@@ -72,8 +72,8 @@ int main(int argc, char **argv)
     // use the resume command to return to the mode before setToIdle
     node.resume();
 
-    // while(SUCCESS)
-    // {
+    while(SUCCESS)
+    {
         // get all the packets that have been collected, with a timeout of 500 miliseconds
 
     mscl::MipDataPackets packets = node.getDataPackets(500, 1);
@@ -91,7 +91,7 @@ int main(int argc, char **argv)
         }
     }
 
-    // }
+    }
 
     return 0;
 
