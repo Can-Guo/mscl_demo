@@ -272,6 +272,9 @@ MEMORYCHECK_COMMAND:FILEPATH=MEMORYCHECK_COMMAND-NOTFOUND
 //File that contains suppressions for the memory checker
 MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
 
+//The directory containing a CMake configuration file for Matplot++.
+Matplot++_DIR:PATH=Matplot++_DIR-NOTFOUND
+
 //Path to a program.
 P4COMMAND:FILEPATH=P4COMMAND-NOTFOUND
 
@@ -296,6 +299,9 @@ example_demo_BINARY_DIR:STATIC=/home/guoyucan/Downloads/mscl_demo/example_cpp/bu
 
 //Value Computed by CMake
 example_demo_SOURCE_DIR:STATIC=/home/guoyucan/Downloads/mscl_demo/example_cpp
+
+//The directory containing a CMake configuration file for matplot++.
+matplot++_DIR:PATH=matplot++_DIR-NOTFOUND
 
 
 ########################

@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/share/c++-mscl/Boost/include -I/usr/share/c++-mscl/source 
+CXX_INCLUDES = -I/usr/share/c++-mscl/Boost/include -I/usr/share/c++-mscl/source -I/home/guoyucan/vcpkg/installed/x64-linux/share/matplot++ 
 

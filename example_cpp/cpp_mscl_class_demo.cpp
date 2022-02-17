@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-02-13 14:54:30
  * @LastEditors: Guo Yuqin,12032421@mail.sustech.edu.cn
- * @LastEditTime: 2022-02-17 10:58:37
+ * @LastEditTime: 2022-02-17 15:39:18
  * @FilePath: /example_cpp/cpp_mscl_class_demo.cpp
  */
 
@@ -12,8 +12,11 @@
 #include <stdio.h>
 #include <vector>
 #include <chrono>
-
 using namespace std;
+
+#include "rapidcsv.h"
+// #include "matplot/matplot.h"
+
 #include "mscl/mscl.h"
 
 
@@ -108,7 +111,7 @@ public:
     string recordDataToCSV(vector <AHRS_IMU::ACCELERATION_EULER_ANGLE> acceleration_euler_angle);
 
     //TODO: Method to plot the data stream from CSV file generated before
-    void plotDataCSV(string csv_file_name);
+    string plotDataCSV(string csv_file_name);
 
 };
 
@@ -171,7 +174,7 @@ void AHRS_IMU::EnableDataStream_AHRS_IMU()
     // start sampling the active channels on the AHRS/IMU class of the Node
     node.enableDataStream(mscl::MipTypes::CLASS_AHRS_IMU);
 
-    node.resume();
+    // node.resume();
 
 }
 
@@ -268,44 +271,51 @@ vector <AHRS_IMU::ACCELERATION_EULER_ANGLE>  AHRS_IMU::parseDataStream_AHRS_IMU(
     struct AHRS_IMU::ACCELERATION_EULER_ANGLE accel_euler_buffer;
 
     mscl::InertialNode node(AHRS_IMU::connection);
-    mscl::MipDataPackets packets = node.getDataPackets(Timeout_ms, PacketNumber);
+    
 
-    // for(int i=0; i<PacketNumber; i++)
-    // {
-    for(mscl::MipDataPacket packet : packets)
+    for(int i=0; i<PacketNumber; i++)
     {
-        // packet.descriptorSet(); // the descriptor set of the packet
+        mscl::MipDataPackets packets = node.getDataPackets(Timeout_ms, 1);
 
-        // get all of the points in the packet
-        mscl::MipDataPoints data = packet.data();
-        mscl::MipDataPoint dataPoint;
-
-        for(unsigned int itr = 0; itr < data.size(); itr++)
+        for(mscl::MipDataPacket packet : packets)
         {
-            dataPoint = data[itr];
+            // packet.descriptorSet(); // the descriptor set of the packet
 
-            // Print out data to check or debug.
-            // cout    << "Data frame:" << right<<setw(15) << dataPoint.channelName() << " |"<<right<<setw(3) 
-            //         << dataPoint.storedAs()<<" | "<<right<<setw(15)<<dataPoint.as_float()<<endl;
-            
-            if (dataPoint.channelName() == string("roll"))
-                accel_euler_buffer.Euler_Angle.roll = dataPoint.as_float();
-            if (dataPoint.channelName() == string("pitch"))
-                accel_euler_buffer.Euler_Angle.pitch = dataPoint.as_float();
-            if (dataPoint.channelName() == string("yaw"))
-                accel_euler_buffer.Euler_Angle.yaw = dataPoint.as_float();
-            if (dataPoint.channelName() == string("scaledAccelX"))
-                accel_euler_buffer.Acceleration.accel_x = dataPoint.as_float();
-            if (dataPoint.channelName() == string("scaledAccelY"))
-                accel_euler_buffer.Acceleration.accel_y = dataPoint.as_float();
-            if (dataPoint.channelName() == string("scaledAccelZ"))
-                accel_euler_buffer.Acceleration.accel_z = dataPoint.as_float();
+            // get all of the points in the packet
+            mscl::MipDataPoints data = packet.data();
+            mscl::MipDataPoint dataPoint;
+
+            for(unsigned int itr = 0; itr < data.size(); itr++)
+            {
+                dataPoint = data[itr];
+
+                // Print out data to check or debug.
+                // cout    << "Data frame:" << right<<setw(15) << dataPoint.channelName() << " |"<<right<<setw(3) 
+                //         << dataPoint.storedAs()<<" | "<<right<<setw(15)<<dataPoint.as_float()<<endl;
+                
+                if (dataPoint.channelName() == string("roll"))
+                    accel_euler_buffer.Euler_Angle.roll = dataPoint.as_float();
+                if (dataPoint.channelName() == string("pitch"))
+                    accel_euler_buffer.Euler_Angle.pitch = dataPoint.as_float();
+                if (dataPoint.channelName() == string("yaw"))
+                    accel_euler_buffer.Euler_Angle.yaw = dataPoint.as_float();
+                if (dataPoint.channelName() == string("scaledAccelX"))
+                    accel_euler_buffer.Acceleration.accel_x = dataPoint.as_float();
+                if (dataPoint.channelName() == string("scaledAccelY"))
+                    accel_euler_buffer.Acceleration.accel_y = dataPoint.as_float();
+                if (dataPoint.channelName() == string("scaledAccelZ"))
+                    accel_euler_buffer.Acceleration.accel_z = dataPoint.as_float();
+            }
+
+            // Print out the data stream to check or debugging.
+            // cout    << "Data Before push_back : " 
+            //         << accel_euler_buffer.Euler_Angle.roll << " | " << accel_euler_buffer.Euler_Angle.pitch << " | "
+            //         << accel_euler_buffer.Euler_Angle.yaw << " | " << accel_euler_buffer.Acceleration.accel_x << " | "
+            //         << accel_euler_buffer.Acceleration.accel_y << " | " << accel_euler_buffer.Acceleration.accel_z << endl;
+                    
+            acceleration_euler_list.push_back(accel_euler_buffer);
+
         }
-        acceleration_euler_list.push_back(accel_euler_buffer);
-        
-        // 下面这是有问题的代码,因为一次性想压入两个内部的结构体,但结构体可能找不到对应成员元素的关系或顺序
-        // acceleration_euler_list.push_back({{acceleration},{euler_angle}});
-
     }
         
     return acceleration_euler_list;
@@ -371,15 +381,17 @@ string AHRS_IMU::recordDataToCSV(vector <AHRS_IMU::ACCELERATION_EULER_ANGLE> acc
         else if (AHRS_IMU::dataSelecter == 0x11)
         {
 
-            cout    <<left<<setw(15) << "Acceleration after push_back" <<":" <<right<<setw(15)
-                    << acceleration_euler_list[i].Acceleration.accel_x << " | " 
-                    <<right<<setw(15)<< acceleration_euler_list[i].Acceleration.accel_y << " | " 
-                    <<right<<setw(15)<< acceleration_euler_list[i].Acceleration.accel_z << endl;
+            // Print out the data to checking or debugging.
+            // cout    <<left<<setw(15) << "Acceleration after push_back" <<":" <<right<<setw(15)
+            //         << acceleration_euler_list[i].Acceleration.accel_x << " | " 
+            //         <<right<<setw(15)<< acceleration_euler_list[i].Acceleration.accel_y << " | " 
+            //         <<right<<setw(15)<< acceleration_euler_list[i].Acceleration.accel_z << endl;
 
-            cout    <<left<<setw(15) << "Euler Angle after push_back" <<":" <<right<<setw(15)
-                    << acceleration_euler_list[i].Euler_Angle.roll << " | " 
-                    <<right<<setw(15)<< acceleration_euler_list[i].Euler_Angle.pitch << " | " 
-                    <<right<<setw(15)<< acceleration_euler_list[i].Euler_Angle.yaw << endl;
+            // cout    <<left<<setw(15) << "Euler Angle after push_back" <<":" <<right<<setw(15)
+            //         << acceleration_euler_list[i].Euler_Angle.roll << " | " 
+            //         <<right<<setw(15)<< acceleration_euler_list[i].Euler_Angle.pitch << " | " 
+            //         <<right<<setw(15)<< acceleration_euler_list[i].Euler_Angle.yaw << endl;
+
 
             // Acceleration Data Stream is before the Euler Angle Data Stream
 
@@ -409,6 +421,7 @@ string AHRS_IMU::recordDataToCSV(vector <AHRS_IMU::ACCELERATION_EULER_ANGLE> acc
 
     }
 
+    cout << "Data Stream Recording is successful! Please check csv file at " << csv_file_name << endl;
 
     fout.close();
 
@@ -416,10 +429,21 @@ string AHRS_IMU::recordDataToCSV(vector <AHRS_IMU::ACCELERATION_EULER_ANGLE> acc
 }
 
 // TODO: plot data stream from CSV file
-// void plotDataCSV(string csv_file_name)
-// {
+string AHRS_IMU::plotDataCSV(string csv_file_name)
+{
+    rapidcsv::Document doc(csv_file_name, rapidcsv::LabelParams(0,-1));
+
+    vector <vector <float> > Data_Columns;
+
+    for(int i=0; i<AHRS_IMU::DataLabelName.size(); i++)
+    {
+        vector <float> column = doc.GetColumn<float>(AHRS_IMU::DataLabelName[i]);
+        Data_Columns.push_back(column);
+    }
     
-// }
+    return "True";
+
+}
 
 
 // Testing demo for this Class deployment
@@ -433,34 +457,31 @@ int main(int argc, char ** argv)
     imu.setDataChannel_Euler_Angles(500);
     imu.EnableDataStream_AHRS_IMU();
 
+
     // Feature 1 : Parse one packet of data stream
     imu.accele_euler = imu.parseDataPacket_AHRS_IMU(500);
     cout <<left<<setw(15) << "Acceleration " <<":" <<right<<setw(15)<< imu.accele_euler.Acceleration.accel_x << " | " <<right<<setw(15)<< imu.accele_euler.Acceleration.accel_y << " | " <<right<<setw(15)<<  imu.accele_euler.Acceleration.accel_z << endl;
     cout <<left<<setw(15) << "Euler Angle " <<":" <<right<<setw(15)<< imu.accele_euler.Euler_Angle.roll << " | " <<right<<setw(15)<< imu.accele_euler.Euler_Angle.pitch << " | " <<right<<setw(15)<< imu.accele_euler.Euler_Angle.yaw << endl;
     
+    // Start time of the executation
+    auto start = chrono::high_resolution_clock::now();
 
-    // Feature 2 : Parse PacketNumber packets of data stream
-    int PacketNumber = 100;
+    // Feature 2 : Parse PacketNumber packets of data stream, you may change the PacketNumber to meet your needs.
+    int PacketNumber = 500;
     vector <AHRS_IMU::ACCELERATION_EULER_ANGLE> accel_euler_list = imu.parseDataStream_AHRS_IMU(500, PacketNumber);
     
-    // for(int i=0; i<PacketNumber; i++)
-    // {
-    //     cout <<left<<setw(15) << "Acceleration " <<":" <<right<<setw(15)<< accel_euler_list[i].Acceleration.accel_x << " | " << endl;
-    //     cout <<left<<setw(15) << "Euler Angle " <<":" <<right<<setw(15)<< accel_euler_list[i].Euler_Angle.roll << " | " << endl;
-    // }    
 
+    // Feature 3 : Parse PacketNumber packets and record data stream into CSV file
+    // string file_name = imu.recordDataToCSV(accel_euler_list);
 
-    // Feature 3 : 
-    // TODO: Parse PacketNumber packets and record data stream into CSV file
-    // Feature Not Finished!
-    // string filename = imu.createCSV();
-    // cout << "filename:" << filename << endl;
-    string file_name = imu.recordDataToCSV(accel_euler_list);
-    // cout << "file_name:" << file_name << endl;
+    // Elapsed time of the executation
+    auto elapsed = chrono::high_resolution_clock::now() - start;
 
+    cout << "\r\nParse and record data Executation time is about " << chrono::duration_cast<chrono::microseconds> (elapsed).count()/1000.0 << " milliseconds." << endl;
 
     // Feature 4:
     // TODO: Plot the data recorded inside CSV file generated above
+    // string state = imu.plotDataCSV(file_name);
 
 
 }
