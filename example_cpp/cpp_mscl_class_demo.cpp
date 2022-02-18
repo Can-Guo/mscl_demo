@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-02-13 14:54:30
  * @LastEditors: Guo Yuqin,12032421@mail.sustech.edu.cn
- * @LastEditTime: 2022-02-17 15:39:18
+ * @LastEditTime: 2022-02-18 09:40:30
  * @FilePath: /example_cpp/cpp_mscl_class_demo.cpp
  */
 
@@ -15,8 +15,7 @@
 using namespace std;
 
 #include "rapidcsv.h"
-// #include "matplot/matplot.h"
-
+#include <cmath>
 #include "mscl/mscl.h"
 
 
@@ -111,7 +110,7 @@ public:
     string recordDataToCSV(vector <AHRS_IMU::ACCELERATION_EULER_ANGLE> acceleration_euler_angle);
 
     //TODO: Method to plot the data stream from CSV file generated before
-    string plotDataCSV(string csv_file_name);
+    string plotDataCSV(string csv_file_name,float executation_time);
 
 };
 
@@ -429,7 +428,7 @@ string AHRS_IMU::recordDataToCSV(vector <AHRS_IMU::ACCELERATION_EULER_ANGLE> acc
 }
 
 // TODO: plot data stream from CSV file
-string AHRS_IMU::plotDataCSV(string csv_file_name)
+string AHRS_IMU::plotDataCSV(string csv_file_name,float executation_time)
 {
     rapidcsv::Document doc(csv_file_name, rapidcsv::LabelParams(0,-1));
 
@@ -440,6 +439,10 @@ string AHRS_IMU::plotDataCSV(string csv_file_name)
         vector <float> column = doc.GetColumn<float>(AHRS_IMU::DataLabelName[i]);
         Data_Columns.push_back(column);
     }
+    int frame_number = Data_Columns.at(0).size();
+
+
+    // plot data with matplotplusplus libraries.
     
     return "True";
 
@@ -460,8 +463,8 @@ int main(int argc, char ** argv)
 
     // Feature 1 : Parse one packet of data stream
     imu.accele_euler = imu.parseDataPacket_AHRS_IMU(500);
-    cout <<left<<setw(15) << "Acceleration " <<":" <<right<<setw(15)<< imu.accele_euler.Acceleration.accel_x << " | " <<right<<setw(15)<< imu.accele_euler.Acceleration.accel_y << " | " <<right<<setw(15)<<  imu.accele_euler.Acceleration.accel_z << endl;
-    cout <<left<<setw(15) << "Euler Angle " <<":" <<right<<setw(15)<< imu.accele_euler.Euler_Angle.roll << " | " <<right<<setw(15)<< imu.accele_euler.Euler_Angle.pitch << " | " <<right<<setw(15)<< imu.accele_euler.Euler_Angle.yaw << endl;
+    cout <<std::left<<setw(15) << "Acceleration " <<":" <<std::right<<setw(15)<< imu.accele_euler.Acceleration.accel_x << " | " <<std::right<<setw(15)<< imu.accele_euler.Acceleration.accel_y << " | " <<std::right<<setw(15)<<  imu.accele_euler.Acceleration.accel_z << endl;
+    cout <<std::left<<setw(15) << "Euler Angle " <<":" <<std::right<<setw(15)<< imu.accele_euler.Euler_Angle.roll << " | " <<std::right<<setw(15)<< imu.accele_euler.Euler_Angle.pitch << " | " <<std::right<<setw(15)<< imu.accele_euler.Euler_Angle.yaw << endl;
     
     // Start time of the executation
     auto start = chrono::high_resolution_clock::now();
@@ -469,20 +472,20 @@ int main(int argc, char ** argv)
     // Feature 2 : Parse PacketNumber packets of data stream, you may change the PacketNumber to meet your needs.
     int PacketNumber = 500;
     vector <AHRS_IMU::ACCELERATION_EULER_ANGLE> accel_euler_list = imu.parseDataStream_AHRS_IMU(500, PacketNumber);
-    
+
 
     // Feature 3 : Parse PacketNumber packets and record data stream into CSV file
-    // string file_name = imu.recordDataToCSV(accel_euler_list);
+    string file_name = imu.recordDataToCSV(accel_euler_list);
 
     // Elapsed time of the executation
     auto elapsed = chrono::high_resolution_clock::now() - start;
 
     cout << "\r\nParse and record data Executation time is about " << chrono::duration_cast<chrono::microseconds> (elapsed).count()/1000.0 << " milliseconds." << endl;
-
+    
+    
     // Feature 4:
-    // TODO: Plot the data recorded inside CSV file generated above
-    // string state = imu.plotDataCSV(file_name);
-
+    // TODO: Plot the data stream recorded inside CSV file generated above
+    string state = imu.plotDataCSV(file_name, 1.0);
 
 }
 

@@ -20,7 +20,7 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
 include_directories(/usr/share/c++-mscl/Boost/include/)
 include_directories(/usr/share/c++-mscl/source/)
-include_directories(/home/guoyucan/vcpkg/installed/x64-linux/share/matplot++/)
+
 
 # https://stackoverflow.com/questions/8774593/cmake-link-to-external-library
 target_link_libraries(example_demo /usr/share/c++-mscl/libmscl.so)
@@ -30,5 +30,3 @@ target_link_libraries(example_demo pthread)
 
 target_link_libraries(example_class /usr/share/c++-mscl/libmscl.so)
 target_link_libraries(example_class pthread)
-
-

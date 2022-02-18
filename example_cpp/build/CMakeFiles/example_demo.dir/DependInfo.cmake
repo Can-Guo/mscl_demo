@@ -12,7 +12,6 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/share/c++-mscl/Boost/include"
   "/usr/share/c++-mscl/source"
-  "/home/guoyucan/vcpkg/installed/x64-linux/share/matplot++"
   )
 
 # Targets to which this target links.

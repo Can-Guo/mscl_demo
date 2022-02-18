@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/example_class.dir/cpp_mscl_class_demo.cpp.o"
-  "../bin/example_class.pdb"
   "../bin/example_class"
+  "../bin/example_class.pdb"
+  "CMakeFiles/example_class.dir/cpp_mscl_class_demo.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.
