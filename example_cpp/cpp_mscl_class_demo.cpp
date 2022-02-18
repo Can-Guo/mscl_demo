@@ -1,7 +1,7 @@
 /*
  * @Date: 2022-02-13 14:54:30
  * @LastEditors: Guo Yuqin,12032421@mail.sustech.edu.cn
- * @LastEditTime: 2022-02-18 09:40:30
+ * @LastEditTime: 2022-02-18 21:23:25
  * @FilePath: /example_cpp/cpp_mscl_class_demo.cpp
  */
 
@@ -12,12 +12,18 @@
 #include <stdio.h>
 #include <vector>
 #include <chrono>
-using namespace std;
+#include <filesystem>
+
 
 #include "rapidcsv.h"
 #include <cmath>
 #include "mscl/mscl.h"
 
+#include "matplotlibcpp.h"
+namespace plt = matplotlibcpp;
+namespace fs = std::filesystem ;
+
+using namespace std;
 
 
 class AHRS_IMU
@@ -65,6 +71,7 @@ public:
     };
 
 private: 
+
     /* data */
     ACCELERATION_EULER_ANGLE acceleration_euler_angle;
     /* data */
@@ -110,17 +117,26 @@ public:
     string recordDataToCSV(vector <AHRS_IMU::ACCELERATION_EULER_ANGLE> acceleration_euler_angle);
 
     //TODO: Method to plot the data stream from CSV file generated before
-    string plotDataCSV(string csv_file_name,float executation_time);
+    string plotDataCSV(string csv_file_name,double executation_time);
 
 };
 
 
 AHRS_IMU::AHRS_IMU() //(/* args */)
 {
+    /*
+    * Function : Constructor of the Class AHRS_IMU
+    * 
+    * params : void
+    * 
+    * return : void
+    * 
+    */
+    
     // initialize the acceleration and euler angle data structure
     acceleration_euler_angle = {{0.0, 0.0, 0.0},{0.0, 0.0, 0.0}}; 
 
-    // define the USB port of the device
+    // TODO: you need to define the USB port of the sensor device in your system
     const string USB_PORT = "/dev/ttyACM0";
     
     // create the connection object with port and baud rate
@@ -136,12 +152,13 @@ AHRS_IMU::AHRS_IMU() //(/* args */)
     AHRS_IMU::SUCCESS = node.ping();
 
     if(AHRS_IMU::SUCCESS == true)
-    {
-        cout << "Node Information: " << endl;
-        cout << "Model Name: " << node.modelName() << endl;
-        cout << "Model Number: " << node.modelNumber() << endl;
-        cout << "Serial: " << node.serialNumber() << endl;
-        cout << "Firmware: " << node.firmwareVersion().str() << endl << endl;
+    {   
+        // print out information of the sensor device
+        std::cout << "Node Information: " << endl;
+        std::cout << "Model Name: " << node.modelName() << endl;
+        std::cout << "Model Number: " << node.modelNumber() << endl;
+        std::cout << "Serial: " << node.serialNumber() << endl;
+        std::cout << "Firmware: " << node.firmwareVersion().str() << endl << endl;
     }
 
 }
@@ -149,22 +166,52 @@ AHRS_IMU::AHRS_IMU() //(/* args */)
 
 void AHRS_IMU::setToIdle()
 {
+    /*
+    * Function : Set the sensor into Idle mode.
+    * 
+    * params : void
+    * 
+    * return : void
+    * 
+    */
+
     mscl::InertialNode node(AHRS_IMU::connection);
     node.setToIdle();
+    std::cout << "Set the sensor to Idle state." << endl;
 }
 
 
 void AHRS_IMU::resumeDataStream()
 {
+    /*
+    * Function : Resume to data stream before Idle mode.
+    * 
+    * params : void
+    * 
+    * return : void
+    * 
+    */
+
     mscl::InertialNode node(AHRS_IMU::connection);
     node.resume();
+    std::cout << "Resume to data sampling." << endl;
 }
 
 
 void AHRS_IMU::EnableDataStream_AHRS_IMU()
 {
-    cout << "\r\nEnable Data Stream..." << endl;
+    /*
+    * Function : Enable data stream after you set the data channel of the channel field.
+    * 
+    * params : void
+    * 
+    * return : void
+    * 
+    */
 
+    std::cout << "\r\nEnable Data Stream..." << endl;
+
+    // create InertialNode, passing into the Connection
     mscl::InertialNode node(AHRS_IMU::connection);
 
     //set the active channels for the different data classes on the Node
@@ -173,19 +220,26 @@ void AHRS_IMU::EnableDataStream_AHRS_IMU()
     // start sampling the active channels on the AHRS/IMU class of the Node
     node.enableDataStream(mscl::MipTypes::CLASS_AHRS_IMU);
 
-    // node.resume();
-
 }
 
 
 void AHRS_IMU::setDataChannel_Accel_IMU(int SampleRate)
 {
-    cout << "Set Acceleration Data Channel." << endl;
+    /*
+    * Function :Configurate the channel of data stream to
+    * include -> Acceleration.
+    * 
+    * params : (int) SampleRate (Hz)
+    * 
+    * return : void
+    */
+
     if(AHRS_IMU::dataSelecter == 0x00)
     {
         AHRS_IMU::DataLabelName = {"Acceleration_x", "Acceleration_y", "Acceleration_z"};
         dataSelecter = Accel;
     }
+
     else if (AHRS_IMU::dataSelecter == 0x10)
     {
         AHRS_IMU::DataLabelName.push_back("Acceleration_x");
@@ -193,18 +247,32 @@ void AHRS_IMU::setDataChannel_Accel_IMU(int SampleRate)
         AHRS_IMU::DataLabelName.push_back("Acceleration_z");
         dataSelecter = Accel_and_Euler;
     }
+
     AHRS_IMU::ahrsImuChs.push_back(mscl::MipChannel(mscl::MipTypes::CH_FIELD_SENSOR_SCALED_ACCEL_VEC, mscl::SampleRate::Hertz(SampleRate)));
+    std::cout << "Added Acceleration Data Channel!\r\n" << endl;
+
 }
 
 
 void AHRS_IMU::setDataChannel_Euler_Angles(int SampleRate)
 {
-    cout << "Set Euler Angles Data Channel." << endl;
+
+    /*
+    * Function : Configurate the channel of data stream to
+    * include -> Euler Angles
+    * 
+    * params : (int) SampleRate (Hz)
+    * 
+    * return : void
+    * 
+    */
+
     if(AHRS_IMU::dataSelecter == 0x00)
     {
         AHRS_IMU::DataLabelName = {"roll", "pitch", "yaw"};
         dataSelecter = Euler;
     }
+
     else if (AHRS_IMU::dataSelecter == 0x01)
     {
         AHRS_IMU::DataLabelName.push_back("roll");
@@ -212,13 +280,25 @@ void AHRS_IMU::setDataChannel_Euler_Angles(int SampleRate)
         AHRS_IMU::DataLabelName.push_back("yaw");
         dataSelecter = Accel_and_Euler;
     }
+
     AHRS_IMU::ahrsImuChs.push_back(mscl::MipChannel(mscl::MipTypes::CH_FIELD_SENSOR_EULER_ANGLES, mscl::SampleRate::Hertz(SampleRate)));
+    std::cout << "Added Euler Angles Data Channel!\r\n" << endl;
+
 }
 
 
 AHRS_IMU::ACCELERATION_EULER_ANGLE AHRS_IMU::parseDataPacket_AHRS_IMU(int Timeout_ms)
 {
-    cout << "\r\nParse One Data Packet ..." << endl;
+    /*
+    * Function : Parse One Data Packet of {Acceleration,Euler_Angle}
+    * 
+    * params : (int) Timeout_ms (milliseconds)
+    * 
+    * return : (AHRS_IMU::ACCELERATION_EULER_ANGLE)
+    * 
+    */
+    
+    std::cout << "\r\nParse One Data Packet ..." << endl;
 
     struct AHRS_IMU::EULER_ANGLE euler_angle = {0.0, 0.0, 0.0};
     struct AHRS_IMU::ACCELERATION acceleration ={0.0, 0.0, 0.0};
@@ -261,11 +341,21 @@ AHRS_IMU::ACCELERATION_EULER_ANGLE AHRS_IMU::parseDataPacket_AHRS_IMU(int Timeou
 }
 
 
-// multi packets for Acceleration and Euler Angle
+// 
 
 vector <AHRS_IMU::ACCELERATION_EULER_ANGLE>  AHRS_IMU::parseDataStream_AHRS_IMU(int Timeout_ms, int PacketNumber)
 {
-    cout << "\r\nParse Data Stream ..." << endl;
+    /*
+    * Function : Parse multiple packets for Acceleration and Euler Angle
+    * 
+    * params :  (int) Timeout_ms (milliseconds)
+    *           (int) PacketNumber
+    * 
+    * return : vector <AHRS_IMU::ACCELERATION_EULER_ANGLE>
+    * 
+    */
+
+    std::cout << "\r\nParse mutiple packets of the Data Stream ..." << endl;
 
     struct AHRS_IMU::ACCELERATION_EULER_ANGLE accel_euler_buffer;
 
@@ -321,46 +411,67 @@ vector <AHRS_IMU::ACCELERATION_EULER_ANGLE>  AHRS_IMU::parseDataStream_AHRS_IMU(
 }
 
 
-// TODO: create a CSV file for data recording
 string AHRS_IMU::createCSV()
 {
+    /*
+    * Function : Create a CSV file for data stream sampling.
+    * 
+    * params : void
+    * 
+    * return : string (csv_filename)
+    * 
+    */
+
     auto now = chrono::system_clock::now();
     time_t tt;
     tt = chrono::system_clock::to_time_t (now);
     ostringstream oss;
     oss << ctime(&tt);
     string time = oss.str(); 
-    // TODO: Change to meet your personal system path.
-    string filename = "/home/guoyucan/Downloads/mscl_demo/example_cpp/csv/" + string(time) + ".csv";
+
+    // access the path to meet your personal system path.
+    fs::path path_object = fs::current_path();
+    string filename = string(path_object.parent_path()) + "/csv/" + string(time) + ".csv";
 
     ofstream fout(filename.c_str());
     fout.close();
+
     return string(filename);
+
 }
 
 
-// TODO: record data stream into CSV file
 string AHRS_IMU::recordDataToCSV(vector <AHRS_IMU::ACCELERATION_EULER_ANGLE> acceleration_euler_list)
 {
+    /*
+    * Function : Record data stream into CSV file
+    * 
+    * params : vector <AHRS_IMU::ACCELERATION_EULER_ANGLE> 
+    * 
+    * return : string (csv_file_name)
+    * 
+    */
+
     // Step 0: open a CSV file
     string csv_file_name = AHRS_IMU::createCSV();
     ofstream fout(csv_file_name.c_str());
 
-    // step 1: write column name of the data into the first row of the CSV file
+    // Step 1: write column name of the data into the first row of the CSV file
     for(int i=0; i<(AHRS_IMU::DataLabelName.size()-1); i++)
     {
         fout << DataLabelName[i] << ',';
     }
     fout << DataLabelName[AHRS_IMU::DataLabelName.size()-1] << endl;
     
-    // step 2: write all the data packets into CSV file, row by row
+    // Step 2: write all the data packets into CSV file, row by row
     for(int i=0; i< (AHRS_IMU::acceleration_euler_list.size()); i++)
     {
         if(AHRS_IMU::dataSelecter == 0x00 or AHRS_IMU::acceleration_euler_list.size() == 0)
         {
-            cout << "No Data Packet Found! Please check!" << endl;
+            std::cout << "No Data Packet Found! Please check!" << endl;
         }
-        // Only enable the Acceleration Data Streaming
+        
+        // if only enable the Acceleration Data Streaming
         else if (AHRS_IMU::dataSelecter == 0x01)
         {
             fout    << acceleration_euler_list[i].Acceleration.accel_x << "," 
@@ -368,7 +479,7 @@ string AHRS_IMU::recordDataToCSV(vector <AHRS_IMU::ACCELERATION_EULER_ANGLE> acc
                     << acceleration_euler_list[i].Acceleration.accel_z << endl;
         }
 
-        // Only enable the Euler Angle Data Streaming
+        // if only enable the Euler Angle Data Streaming
         else if (AHRS_IMU::dataSelecter == 0x10)
         {
             fout    << acceleration_euler_list[i].Euler_Angle.roll << ","
@@ -376,7 +487,7 @@ string AHRS_IMU::recordDataToCSV(vector <AHRS_IMU::ACCELERATION_EULER_ANGLE> acc
                     << acceleration_euler_list[i].Euler_Angle.yaw << endl;
         }
 
-        // Enable Both the Acceleration and Euler Angle 
+        // if Enable Both of the Acceleration and Euler Angle 
         else if (AHRS_IMU::dataSelecter == 0x11)
         {
 
@@ -420,72 +531,147 @@ string AHRS_IMU::recordDataToCSV(vector <AHRS_IMU::ACCELERATION_EULER_ANGLE> acc
 
     }
 
-    cout << "Data Stream Recording is successful! Please check csv file at " << csv_file_name << endl;
+    cout << "\r\nData Stream Recording is successful!\r\nPlease check CSV file at : " << csv_file_name << endl;
 
     fout.close();
 
     return csv_file_name;
+
 }
 
-// TODO: plot data stream from CSV file
-string AHRS_IMU::plotDataCSV(string csv_file_name,float executation_time)
-{
-    rapidcsv::Document doc(csv_file_name, rapidcsv::LabelParams(0,-1));
 
+string AHRS_IMU::plotDataCSV(string csv_file_name, double executation_time)
+{
+    /*
+    * Function : Plot data stream from CSV file.
+    * 
+    * params :  string (csv_file_name)
+    *           double (executation_time)
+    * 
+    * return : string (figure_name)
+    * 
+    */
+
+    // read the data stream from CSV file, save into a vector
+    rapidcsv::Document doc(csv_file_name, rapidcsv::LabelParams(0,-1));
     vector <vector <float> > Data_Columns;
+
+    // vector <string> DataLabelName = {"Acceleration_x", "Acceleration_y", "Acceleration_z", "roll", "pitch", "yaw"};
 
     for(int i=0; i<AHRS_IMU::DataLabelName.size(); i++)
     {
         vector <float> column = doc.GetColumn<float>(AHRS_IMU::DataLabelName[i]);
         Data_Columns.push_back(column);
     }
-    int frame_number = Data_Columns.at(0).size();
 
+    // create the time frame sequence of the timestamp
+    int frame_number = Data_Columns[0].size();
+    vector<double> time_frame(frame_number);
+    for(int n=0; n < frame_number; n++)
+    {
+        time_frame[n] = double( 0.0 + n * (executation_time/frame_number));
+    }
 
     // plot data with matplotplusplus libraries.
+    plt::figure_size(1200, 780);
+
+    for (int i = 0; i < AHRS_IMU::DataLabelName.size(); i++)
+    {   
+        plt::named_plot(string(AHRS_IMU::DataLabelName.at(i)), time_frame, Data_Columns.at(i)) ;
+    }
+
+    plt::xlim(0.0, executation_time);
+    plt::title("Sample Data Stream");
+    plt::legend();
     
-    return "True";
+
+    // access current time of the system, to create a file name for figure generated
+    auto now = chrono::system_clock::now();
+    time_t tt;
+    tt = chrono::system_clock::to_time_t (now);
+    ostringstream oss;
+    oss << ctime(&tt);
+    string time = oss.str(); 
+    string fig_name = "../figure/" + string(time) + ".png";
+
+    // access the parent path of the system
+    fs::path path_object = fs::current_path();
+    // std::cout << "Path: " << string(path_object.parent_path()) << endl;
+
+    // std::cout << "\r\nSaving figure of the current plot!" << endl;
+    // save a png figure for the current plot
+    plt::save(fig_name);
+    plt::show();
+
+    std::cout << "\r\nPlot the data stream is successful!";
+
+    fig_name = string(path_object.parent_path()) + "./figure/" + string(time) + ".png";
+
+    return fig_name;
 
 }
 
 
-// Testing demo for this Class deployment
-
+/*  #Testing demo for this Class deployment.
+*  
+*  Feature 1.  Parse one packet of data stream including {Acceleration,Euler_Angle}
+*  
+*  Feature 2.  Parse PacketNumber packets of data stream including {Acceleration,Euler_Angle}
+* 
+*  Feature 3.  Record data stream generated above into a CSV file
+* 
+*  Feature 4.  Plot the data stream recorded inside CSV file generated above,
+*              and save into a png figure file.
+*  
+*/
 int main(int argc, char ** argv)
 {
 
+    // create an instance of the AHRS_IMU class.
     AHRS_IMU imu;
 
-    imu.setDataChannel_Accel_IMU(500);
-    imu.setDataChannel_Euler_Angles(500);
+    int SampleRate = 500;
+    
+    // TODO: Uncomment following two lines if you would like to change the Sample Rate by input number.
+    // std::cout << "Please change the Sampling Rate in (100-1000) Hz, default 500 Hz!" << endl;
+    // cin >> SampleRate;
+
+    // Configurate the data channel, activate channel field, enable data sampling.
+    imu.setDataChannel_Accel_IMU(SampleRate);
+    imu.setDataChannel_Euler_Angles(SampleRate);
     imu.EnableDataStream_AHRS_IMU();
 
 
     // Feature 1 : Parse one packet of data stream
     imu.accele_euler = imu.parseDataPacket_AHRS_IMU(500);
-    cout <<std::left<<setw(15) << "Acceleration " <<":" <<std::right<<setw(15)<< imu.accele_euler.Acceleration.accel_x << " | " <<std::right<<setw(15)<< imu.accele_euler.Acceleration.accel_y << " | " <<std::right<<setw(15)<<  imu.accele_euler.Acceleration.accel_z << endl;
-    cout <<std::left<<setw(15) << "Euler Angle " <<":" <<std::right<<setw(15)<< imu.accele_euler.Euler_Angle.roll << " | " <<std::right<<setw(15)<< imu.accele_euler.Euler_Angle.pitch << " | " <<std::right<<setw(15)<< imu.accele_euler.Euler_Angle.yaw << endl;
+    std::cout <<std::left<<setw(15) << "Acceleration " <<":" <<std::right<<setw(15)<< imu.accele_euler.Acceleration.accel_x << " | " <<std::right<<setw(15)<< imu.accele_euler.Acceleration.accel_y << " | " <<std::right<<setw(15)<<  imu.accele_euler.Acceleration.accel_z << endl;
+    std::cout <<std::left<<setw(15) << "Euler Angle " <<":" <<std::right<<setw(15)<< imu.accele_euler.Euler_Angle.roll << " | " <<std::right<<setw(15)<< imu.accele_euler.Euler_Angle.pitch << " | " <<std::right<<setw(15)<< imu.accele_euler.Euler_Angle.yaw << endl;
     
-    // Start time of the executation
-    auto start = chrono::high_resolution_clock::now();
 
     // Feature 2 : Parse PacketNumber packets of data stream, you may change the PacketNumber to meet your needs.
+    
+    // Start time of the executation of this part.
+    auto start = chrono::high_resolution_clock::now();
+
+    // TODO: you may need to change the packet number you would like to collect
     int PacketNumber = 500;
     vector <AHRS_IMU::ACCELERATION_EULER_ANGLE> accel_euler_list = imu.parseDataStream_AHRS_IMU(500, PacketNumber);
-
-
-    // Feature 3 : Parse PacketNumber packets and record data stream into CSV file
-    string file_name = imu.recordDataToCSV(accel_euler_list);
 
     // Elapsed time of the executation
     auto elapsed = chrono::high_resolution_clock::now() - start;
 
-    cout << "\r\nParse and record data Executation time is about " << chrono::duration_cast<chrono::microseconds> (elapsed).count()/1000.0 << " milliseconds." << endl;
+    std::cout << "\r\nParse data packets Executation Time is about " << chrono::duration_cast<chrono::microseconds> (elapsed).count()/1000.0 << " milliseconds." << endl;
+
+
+    // Feature 3 : Record data stream generated above into a CSV file
+    string file_name = imu.recordDataToCSV(accel_euler_list);
     
     
-    // Feature 4:
-    // TODO: Plot the data stream recorded inside CSV file generated above
-    string state = imu.plotDataCSV(file_name, 1.0);
+    // Feature 4: Plot the data stream recorded inside CSV file generated above,
+    //            and save into a png figure.
+    string fig_name = imu.plotDataCSV(file_name, 1.0);
+
+    std::cout << "\r\nGenerated Figure located at : " << fig_name << endl << endl;
 
 }
 

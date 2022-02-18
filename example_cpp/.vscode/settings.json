@@ -61,7 +61,9 @@
         "string_view": "cpp",
         "locale": "cpp",
         "codecvt": "cpp",
-        "filesystem": "cpp"
+        "filesystem": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp"
     },
     "C_Cpp.errorSquiggles": "Enabled"
 }

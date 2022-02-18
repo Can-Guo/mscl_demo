@@ -1,39 +1,61 @@
-
 # mscl_demo
 
 This is an example demo based on [mscl](https://github.com/LORD-MicroStrain/MSCL "mscl home") for AHRS/IMU 3DX-GX3-25 and 3DX-CV5-AHRS sensor developed by [Microstrain](https://www.microstrain.com/), which example codes we modified for easy integration or deployment. More examples for this kind of sensor could be found in [LORD-Microstrain/MSCL/MSCL_Examples/Inertial](https://github.com/LORD-MicroStrain/MSCL/tree/master/MSCL_Examples/Inertial). For more information on how to master the MSCL libraries, please refer to [mscl documentation](http://lord-microstrain.github.io/MSCL/Documentation/MSCL%20Documentation/index.html#).
 
 
 ## Project Overview
+
 ```bash
-mscl_demo                                           #   Project Top Folder
-├── example_cpp                                     #   cpp 
-│   ├── bin                                         #   generated executable files of cpp inside
-│   │   ├── example_class                           #   demo 2 generated executable file of cpp
-│   │   └── example_demo                            #   demo 1 generated executable file of cpp
-│   ├── build                                       #   CMake generated files
-│   ├── CMakeLists.txt                              #   CMake configuration file for compile, assemble and link to the target
-│   ├── cpp_mscl_class_demo.cpp                     #   cpp demo 2 source file based on Class
-│   └── cpp_mscl_demo_simple.cpp                    #   cpp demo 1 source file based on procedure
+.                                                   # Project Top Folder
+├── example_cpp                                     # CPP
+│   ├── bin                                         # generated executable files of cpp inside
+│   │   ├── class_demo                              # demo 2 generated executable file of cpp
+│   │   └── simple_demo                             # demo 1 generated executable file of cpp
+│   │
+│   ├── build                                       # folder for cmake build
+│   │
+│   ├── CMakeLists.txt                              # CMake configuration file for compile, assemble and link to the target
+│   ├── cpp_mscl_class_demo.cpp                     # cpp demo 2
+│   ├── cpp_mscl_demo_simple.cpp                    # cpp demo 1
+│   │
+│   ├── csv                                         # folder for generated CSV data file
+│   │   ├── Fri Feb 18 21:18:42 2022\012.csv        
+│   │   ├── Fri Feb 18 21:21:13 2022\012.csv        
+│   │   └── Fri Feb 18 21:24:14 2022\012.csv        
+│   │
+│   ├── figure                                      # folder for generated png figure file
+│   │   ├── Fri Feb 18 21:21:14 2022\012.png
+│   │   └── Fri Feb 18 21:24:14 2022\012.png
+│   │
+│   ├── matplotlibcpp.h                             # header file, please visit https://github.com/lava/matplotlib-cpp
+│   └── rapidcsv.h                                  # header file, please visit https://github.com/d99kris/rapidcsv
 │
-├── example_python                                  #   python
-│   ├── csv                                         #   generated csv file for data recording by Python
-│   │   ├── data_2022-02-13 12:58:57.227380.csv
+├── example_python                                  # PYTHON
+│   ├── csv                                         # generated CSV file for data stream recording by Python
+│   │   ├── data_2022-02-13 12:58:57.227380.csv     
 │   │   ├── data_2022-02-13 13:44:25.828601.csv     
 │   │   └── data_2022-02-13 13:47:43.859994.csv
-│   ├── fig                                         #   generated png figure file after plotting the data recorded by Python
+│   │
+│   ├── fig                                         # generated png figure file after plotting the data stream recorded by Python
 │   │   ├── 2022-02-13 13:42:35.099423.png
 │   │   ├── 2022-02-13 13:43:56.991011.png
 │   │   └── 2022-02-13 13:48:51.539636.png
-│   └── python_mscl_demo                            #   python source files
-│       ├── python_mscl_class_demo.py               #   python demo 2 based on Class
-│       └── python_mscl_demo_simple.py              #   python demo 1 based on procedure
+│   │
+│   └── python_mscl_demo                            # python source files
+│       ├── python_mscl_class_demo.py               # python demo 2
+│       └── python_mscl_demo_simple.py              # python demo 1
 │
-├── install_package                                 #   Please refer to https://github.com/LORD-MicroStrain/MSCL/blob/master/README.md
-│   ├── c++-mscl_63.1.0_amd64.deb                   #   Pre-built Linux packages for cpp
-│   └── python3-mscl_63.1.0_amd64.deb               #   Pre-built Linux packages for python
-└── README.md                                          
+├── install_package                                 # Go to https://github.com/LORD-MicroStrain/MSCL/blob/master/README.md
+│   ├── c++-mscl_63.1.0_amd64.deb
+│   └── python3-mscl_63.1.0_amd64.deb
+│
+├── mscl_demo_20220218-0.zip                        # version record zip, conresponding to commit 
+├── mscl_demo_20220218-1 Full feature.zip           # version record zip, conresponding to coomit
+│
+└── README.md
+
 ```
+
 
 ## Installation
 Follow steps to install MSCL libraries for python3 or cpp on [HowToUseMSCL](https://github.com/LORD-MicroStrain/MSCL/blob/master/HowToUseMSCL.md?).
@@ -58,22 +80,6 @@ python3 python_mscl_class_demo.py
 
 
 ### c++
-#### Build using g++ in the terminal
-##### demo 1 : cpp_mscl_demo_simple.cpp
-###### Step 1. Complie the source file with g++ in the folder ./example_cpp/
-```bash
-g++ -I/usr/share/c++-mscl/source -I/usr/share/c++-mscl/Boost/include cpp_mscl_demo_simple.cpp -o cpp_demo_1 -L/usr/share/c++-mscl -lmscl -lstdc++ -std=c++11 -lpthread -pthread
-```
-###### Step 2. Run the executable file generated.
-```bash
-LD_PRELOAD=/usr/share/c++-mscl/libmscl.so ./cpp_demo_1
-```
-
-
-##### demo 2 : cpp_mscl_class_demo.cpp
-Change the name of the source file in the command, from <cpp_mscl_demo_simple.cpp> to <cpp_mscl_class_demo.cpp>, target name from <cpp_demo_1> to <cpp_demo_2>.
-
-
 #### Build using CMake in the terminal
 
 ```bash
@@ -88,3 +94,9 @@ cd bin/
 ./example_demo 
 ./example_class
 ```
+
+## Contribution
+@ Parker LORD, MicroStrain, https://github.com/LORD-MicroStrain/MSCL.
+@Kristofer Berggren, https://github.com/d99kris/rapidcsv.
+@ Benno Evers, https://github.com/lava/matplotlib-cpp.
+
